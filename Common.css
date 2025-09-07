@@ -1,0 +1,114 @@
+/***********************************************************************
+* retro-1620/webUI Common.css
+************************************************************************
+* Copyright (c) 2021, Paul Kimpel.
+* Licensed under the MIT License, see
+*       http://www.opensource.org/licenses/mit-license.php
+************************************************************************
+* IBM 1620 emulator common style sheet.
+************************************************************************
+* 20212-07-19  P.Kimpel
+*   Original version, from retro-g15 Common.css
+***********************************************************************/
+
+@font-face {
+    font-family: "DejaVuSansMonoBookWeb";
+    font-weight: normal;
+    font-style: normal;
+    src: url("./Resources/DejaVuSansMono-webfont.woff") format("woff"),
+         url("./Resources/DejaVuSansMono-webfont.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DejaVuSansMonoBookWeb";
+    font-weight: bold;
+    font-style: normal;
+    src: url("./Resources/DejaVuSansMono-Bold-webfont.woff") format("woff"),
+         url("./Resources/DejaVuSansMono-Bold-webfont.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DejaVuSansWeb";
+    font-weight: normal;
+    font-style: normal;
+    src: url("./Resources/DejaVuSans-webfont.woff") format("woff"),
+         url("./Resources/DejaVuSans-webfont.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DejaVuSansWeb";
+    font-weight: bold;
+    font-style: normal;
+    src: url("./Resources/DejaVuSans-Bold-webfont.woff") format("woff"),
+         url("./Resources/DejaVuSans-Bold-webfont.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "City BQ Bold";
+    font-weight: bold;
+    font-style: normal;
+    src: url("./Resources/City BQ Bold.ttf") format("truetype");
+}
+
+HTML {
+    height:             100%;
+    --ibm-blue:         #3576BA;        /* was 718DBD, supposed to be Pantone 116-16 U (#147599), but that's UGLY */
+    --ibm-gray:         #4A4B4D}        /* was 555555, now Pantone 19-3906 TCX */
+
+
+BODY {
+    font-family:        DejaVuSansWeb, sans-serif;
+    font-size:          10pt;
+    background-color:   white;
+    color:              black;
+    height:             calc(100% - 16px);
+    margin:             4px;
+    padding:            4px}
+
+BODY.panelBody {
+    position:           relative;
+    font-size:          8pt;
+    margin:             0;
+    padding:            0;
+    user-select:        none;
+    cursor:             default}
+
+BODY.deviceBody {
+    font-size:          7pt;
+    overflow:           hidden;
+    margin:             0;
+    padding:            0;
+    background-color:   #678;
+    color:              white;
+    user-select:        none;
+    cursor:             default}
+
+H1 {
+    margin-top:         2em;
+    margin-bottom:      1em;
+    font-size:          14pt;
+    font-weight:        bold}
+
+H2 {
+    margin-top:         1em;
+    margin-bottom:      1em;
+    font-size:          12pt;
+    font-weight:        bold}
+
+.bold {
+    font-weight:        bold}
+.center {
+    text-align:         center}
+.rj {
+    text-align:         right}
+.data {
+    font-family:        DejaVuSansMonoBookWeb, monospace}
+.ibmBlue {
+    background-color:   var(--ibm-blue)}
+.ibmGray {
+    background-color:   var(--ibm-gray)}
+.number {
+    font-family:        DejaVuSansMonoBookWeb, monospace;
+    text-align:         right}
+.nowrap {
+    white-space:        nowrap}
