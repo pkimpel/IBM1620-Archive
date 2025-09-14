@@ -1,7 +1,7 @@
 /***********************************************************************
-* IBM-1620-Archive/Home.css
+* IBM1620.org/Home.css
 ************************************************************************
-* Copyright (c) 2025, Paul Kimpel.
+* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
@@ -9,12 +9,14 @@
 ************************************************************************
 * 2025-09-05  P.Kimpel
 *   Original version, from retro-1620 webUI/1620.css.
+* 2025-09-12  D.Babcock
+*   Modified layout, added CHM logo, text, and IBM 1620 system photo.
 ***********************************************************************/
 
 BODY {
     cursor:             default;
     position:           relative;
-    height:             calc(100% - 16px)}
+    height:             calc(100% - 40px)}
 
 H1 {
     margin-top:         1em;
@@ -22,23 +24,47 @@ H1 {
     font-size:          14pt;
     font-weight:        bold}
 
-#HomePanelLogo {
-    position:           absolute;
-    top:                8px;
-    left:               20%;
-    height:             128px;
-    transform:          translate(-50%, 0)}
 #HomeTitle {
     position:           absolute;
-    top:                0;
-    right:              0;
+    top:                24px;
+    left:               15%;
     width:              60%;
     color:              var(--ibm-blue);
     font-family:        City BQ Bold, Arial, sans-serif;
     font-size:          64px;
     font-weight:        bold;
     line-height:        1.15;
+    letter-spacing:     2px;
+    transform:          translate(-50%, 0);
+    text-align:         center;
+    text-shadow:        -1px -1px 0 grey,
+                         1px -1px 0 grey,
+                        -1px  1px 0 grey,
+                         1px  1px 0 grey}
+#HomeSubTitle {
+    position:           absolute;
+    top:                176px;
+    left:               15%;
+    width:              30%;
+    color:              black;
+    font-size:          32px;
+    font-weight:        bold;
+    transform:          translate(-50%, 0);
     text-align:         center}
+#HomeSystem {
+    position:           absolute;
+    top:                24px;
+    right:              2%;
+    height:             320px}
+#HomeSystemCaption {
+    position:           absolute;
+    top:                350px;
+    right:              2%;
+    width:              25%;
+    color:              black;
+    font-size:          18px;
+    font-style:         italic;
+    text-align:         right}
 
 #Panel7Gray {
     position:           absolute;
@@ -79,14 +105,28 @@ H1 {
     overflow:           hidden;
     cursor:             pointer;
     border:             3px solid black;
-    background-image:   radial-gradient(circle, radial-gradient(circle, #DDD 45%, #CCC 55%, #999 70%, #444 90%));
+    background-image:   radial-gradient(circle, #DDD, #CCC 40%, #999 70%, #666);
     border-radius:      50%;
     box-shadow:         inset 3.75vmin 3.75vmin 7.5vmin #444}
 
+#CHMLogo {
+    position:           absolute;
+    bottom:             0;
+    left:               1%}
 #DisclaimerFooter {
     position:           absolute;
     bottom:             0;
     left:               50%;
     transform:          translate(-50%, 0);
-    font-size:          12px;
+    font-size:          16px;
     font-style:         italic}
+#AuthorBlock {
+    position:           absolute;
+    bottom:             0;
+    right:              2%;
+    width:              25%;
+    color:              black;
+    font-size:          20px;
+    font-weight:        bold;
+    line-height:        1.05;
+    text-align:         right}

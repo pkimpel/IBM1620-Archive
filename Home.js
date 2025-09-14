@@ -1,7 +1,7 @@
 /***********************************************************************
-* IBM-1620-Archive/Home.js
+* IBM1620.org/Home.js
 ************************************************************************
-* Copyright (c) 2025, Paul Kimpel.
+* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
@@ -9,6 +9,8 @@
 ************************************************************************
 * 2025-09-05  P.Kimpel
 *   Original version, from retro-1620 1620.js.
+* 2025-09-12  D.Babcock
+*   Modified layout, added CHM logo, text, and IBM 1620 system photo.
 ***********************************************************************/
 
 import {SelectorSwitch} from "./SelectorSwitch.js";
@@ -19,7 +21,7 @@ const globalLoad = (ev) => {
     let boundResizeWindow = resizeWindow.bind(window);
 
     const switchCaptions = [
-            "Architecture", "Documents", "Hardware", "History", "Installations", "1620\u2011Junior",
+            "Architecture", "Documents", "Hardware", "History", "IBM\u00A01620\u00A0Jr.", "Installations",
             "Links", "Photos", "Restoration", "Simulators", "Software", "Overview"];
 
     /**************************************/
@@ -41,7 +43,8 @@ const globalLoad = (ev) => {
 
         selectorSwitch.setChangeListener((position) => {
             setTimeout(() => {
-                alert(`Position ${position}, "${switchCaptions[position]}," was selected.`);
+  /*              alert(`Position ${position}, "${switchCaptions[position]}," was selected.`); */
+                alert(`Position ${position}, "${switchCaptions[position]}," was selected.\nheight = ` + window.innerHeight + `, width = ` + window.innerWidth);
             }, 500);
         });
     }
