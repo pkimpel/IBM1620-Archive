@@ -79,7 +79,7 @@ H1 {
     overflow:           hidden;
     cursor:             pointer;
     border:             3px solid black;
-    background-image:   radial-gradient(circle, #DDD, #CCC 40%, #999 70%, #666);
+    background-image:   radial-gradient(circle, radial-gradient(circle, #DDD 45%, #CCC 55%, #999 70%, #444 90%));
     border-radius:      50%;
     box-shadow:         inset 3.75vmin 3.75vmin 7.5vmin #444}
 
