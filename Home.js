@@ -21,8 +21,18 @@ const globalLoad = (ev) => {
     let boundResizeWindow = resizeWindow.bind(window);
 
     const switchCaptions = [
-            "Architecture", "Documents", "Hardware", "History", "IBM\u00A01620\u00A0Jr.", "Installations",
-            "Links", "Photos", "Restoration", "Simulators", "Software", "Overview"];
+            "Architecture^   Architectural descriptions of the IBM 1620 and 1710",
+            "Documents^      Scans of documents – ads, articles, books, manuals, papers, reports, technical notes, etc.",
+            "Hardware^       Technical details on each of the devices",
+            "History^        History of the IBM 1620 and 1710",
+            "IBM 1620 Jr.^   Information about all of the known IBM 1620 and 1710 installations",
+            "Installations^  Information about the IBM 1620 Jr. project",
+            "Links^          Links to other IBM 1620 websites",
+            "Photos^         Photos of IBM 1620 devices and machines in use",
+            "Restoration^    Informatin about the CHM IBM1620 Restoration project",
+            "Simulators^     Information about IBM 1620 simulators",
+            "Software^       Software for the IBM 1620",
+            "Overview^       A summary of the IBM 1620 and this site"];
 
     /**************************************/
     function $$(id) {

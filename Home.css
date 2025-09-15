@@ -16,81 +16,92 @@
 BODY {
     cursor:             default;
     position:           relative;
-    height:             calc(100% - 40px)}
+    height:             calc(100% - 8px);
+    background-color:   #F9F6EE;
+    margin:             4px;
+    padding:            0;
+    --heading-height:   25vmin;
+    --sys-image-height: 20vmin;
+    --sys-image-aspect: 1.83;
+    --sel-div-height:   50vmin}
 
-H1 {
-    margin-top:         1em;
-    margin-bottom:      0.5em;
-    font-size:          14pt;
-    font-weight:        bold}
-
-#HomeTitle {
+#HomeHeader {
     position:           absolute;
-    top:                24px;
-    left:               15%;
-    width:              60%;
+    top:                0;
+    left:               50%;
+    height:             var(--heading-height);
+    width:              100%;
+    transform:          translate(-50%, 0)}
+
+#HomeTitleBox {
+    position:           absolute;
+    top:                0;              /* was calc(var(--heading-height)/2); */
+    left:               0;
+    width:              calc(100% - 32px - var(--sys-image-height)*var(--sys-image-aspect));
+    /* transform:          translate(0, -50%); */
+    text-align:         center;
+    padding-left:       16px;
+    padding-right:      16px}
+#HomeTitle {
     color:              var(--ibm-blue);
     font-family:        City BQ Bold, Arial, sans-serif;
-    font-size:          64px;
+    font-size:          calc(var(--heading-height)*0.25);
     font-weight:        bold;
-    line-height:        1.15;
+    line-height:        1.10;
     letter-spacing:     2px;
-    transform:          translate(-50%, 0);
     text-align:         center;
-    text-shadow:        -1px -1px 0 grey,
-                         1px -1px 0 grey,
-                        -1px  1px 0 grey,
-                         1px  1px 0 grey}
+    text-shadow:        -1px -1px 0 var(--ibm-gray),
+                         1px -1px 0 var(--ibm-gray),
+                        -1px  1px 0 var(--ibm-gray),
+                         1px  1px 0 var(--ibm-gray)}
 #HomeSubTitle {
+    color:              var(--ibm-gray);
+    font-size:          calc(var(--heading-height)*0.075);
+    font-weight:        bold}
+
+#HomeSystemImage {
     position:           absolute;
-    top:                176px;
-    left:               15%;
-    width:              30%;
-    color:              black;
-    font-size:          32px;
-    font-weight:        bold;
-    transform:          translate(-50%, 0);
-    text-align:         center}
-#HomeSystem {
-    position:           absolute;
-    top:                24px;
-    right:              2%;
-    height:             320px}
+    top:                0;
+    right:              0;
+    height:             var(--sys-image-height)}
 #HomeSystemCaption {
     position:           absolute;
-    top:                350px;
-    right:              2%;
-    width:              25%;
+    top:                var(--sys-image-height);
+    right:              0;
+    width:              calc(var(--sys-image-height)*var(--sys-image-aspect));
     color:              black;
-    font-size:          18px;
+    font-size:          calc((var(--heading-height) - var(--sys-image-height))/4);
     font-style:         italic;
-    text-align:         right}
+    text-align:         center;
+    padding-left:       8px;
+    padding-right:      8px}
 
-#Panel7Gray {
+#SelectorDiv {
     position:           absolute;
-    top:                150px;
-    bottom:             36px;
+    top:                var(--heading-height);
+    height:             var(--sel-div-height);
     left:               50%;
-    width:              80%;
+    width:              100%;
     transform:          translate(-50%, 0)}
 #SelectorSwitchDiv {
     position:           absolute;
-    top:                150px;
+    top:                50%;
     left:               50%;
-    width:              calc(60vmin - 200px);
-    height:             calc(60vmin - 200px);
-    transform:          translate(-50%, 0)}
+    width:              30vmin;
+    height:             30vmin;
+    transform:          translate(-50%, -50%)}
 #SelectorSwitchDiv .SelectorSwitchCaption {
     position:           absolute;
     height:             2em;
-    font-size:          24px;
+    font-size:          1.9vmin;
     font-weight:        bold;
     color:              white;
     background-color:   var(--ibm-blue);
+    white-space:        nowrap;
     cursor:             pointer;
     padding-left:       8px;
     padding-right:      8px;
-    border:             3px solid var(--ibm-gray);
+    border:             0.317vmin solid var(--ibm-gray);
     border-radius:      1em}
 #SelectorSwitchDiv .SelectorSwitchCaption.slideNone {
     transform:          translate(-1em, -1em) translate(-8px, 0)}
@@ -104,29 +115,41 @@ H1 {
     right:              0;
     overflow:           hidden;
     cursor:             pointer;
-    border:             3px solid black;
-    background-image:   radial-gradient(circle, #DDD, #CCC 40%, #999 70%, #666);
+    border:             3px solid silver;
+    background-image:   radial-gradient(circle, #DDD, #CCC 40%, #999 80%, #666 90%);
     border-radius:      50%;
     box-shadow:         inset 3.75vmin 3.75vmin 7.5vmin #444}
 
+#HomeFooter {
+    position:           absolute;
+    bottom:             0;
+    height:             7vmin;
+    width:              100%}
 #CHMLogo {
     position:           absolute;
-    bottom:             0;
-    left:               1%}
+    bottom:             50%;
+    left:               50%;
+    width:              12vmin;
+    max-width:          15%;
+    max-height:         100%;
+    transform:          translate(-50%, 50%)}
 #DisclaimerFooter {
     position:           absolute;
-    bottom:             0;
-    left:               50%;
-    transform:          translate(-50%, 0);
-    font-size:          16px;
-    font-style:         italic}
+    bottom:             50%;
+    right:              0;
+    width:              40%;
+    transform:          translate(0, 50%);
+    font-size:          1.2vmin;
+    font-style:         italic;
+    text-align:         center}
 #AuthorBlock {
     position:           absolute;
-    bottom:             0;
-    right:              2%;
-    width:              25%;
+    bottom:             50%;
+    left:               0;
+    width:              40%;
+    transform:          translate(0, 50%);
     color:              black;
-    font-size:          20px;
+    font-size:          1.5vmin;
     font-weight:        bold;
     line-height:        1.05;
-    text-align:         right}
+    text-align:         left}

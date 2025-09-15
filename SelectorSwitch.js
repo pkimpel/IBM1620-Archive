@@ -35,7 +35,10 @@ class SelectorSwitch {
             initial     the 0-relative index indicating the default position of the switch;
             positions   an array of angles for the knob positions (in degrees, where 0 is
                             straight up)
-            captions    an arrays of caption labels corresponding to each position
+            captions    an array of caption labels corresponding to each position.
+                        Each entry has two parts, a required caption for the switch
+                        position, and an optional title delimited by a "^" that will
+                        be configured as a pop-up for the label.
         */
 
         this.parent = parent;           // the parent div
@@ -92,7 +95,12 @@ class SelectorSwitch {
                 caption.classList.add(SelectorSwitch.slideLeftClassName);
             }
 
-            caption.textContent = captions[i];
+            const parts = captions[i].split("^");
+            caption.textContent = parts[0].trim();
+            const title = parts[1].trim();
+            if (title.length) {
+                caption.title = title;
+            }
             parent.appendChild(caption);
             caption.addEventListener("click", this.boundCaptionClick, false);
         }
