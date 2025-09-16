@@ -9,6 +9,10 @@
 ************************************************************************
 * 2025-09-05  P.Kimpel
 *   Original version, from retro-1620 MARSelectorKnob.js.
+* 2025-09-14  P.Kimpel
+*   Reworked object sizing to scale with different window sizes.
+* 2025-09-15  P.Kimpel
+*   Added hover pop-ups.
 ***********************************************************************/
 
 export {SelectorSwitch};

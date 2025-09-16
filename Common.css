@@ -7,8 +7,14 @@
 ************************************************************************
 * IBM 1620 emulator common style sheet.
 ************************************************************************
-* 20212-07-19  P.Kimpel
+* 2012-07-19  P.Kimpel
 *   Original version, from retro-g15 Common.css
+* 2025-09-12  D.Babcock
+*   Modified layout, added CHM logo, text, and IBM 1620 system photo.
+* 2025-09-14  P.Kimpel
+*   Reworked object sizing to scale with different window sizes.
+* 2025-09-15  D.Babcock
+*   Minor layout and text changes.
 ***********************************************************************/
 
 @font-face {

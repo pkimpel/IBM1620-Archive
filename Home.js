@@ -11,6 +11,12 @@
 *   Original version, from retro-1620 1620.js.
 * 2025-09-12  D.Babcock
 *   Modified layout, added CHM logo, text, and IBM 1620 system photo.
+* 2025-09-14  P.Kimpel
+*   Reworked object sizing to scale with different window sizes.
+* 2025-09-15  P.Kimpel
+*   Add hover pop-ups.
+* 2025-09-15  D.Babcock
+*   Minor layout and text changes.
 ***********************************************************************/
 
 import {SelectorSwitch} from "./SelectorSwitch.js";
@@ -21,18 +27,18 @@ const globalLoad = (ev) => {
     let boundResizeWindow = resizeWindow.bind(window);
 
     const switchCaptions = [
-            "Architecture^   Architectural descriptions of the IBM 1620 and 1710",
-            "Documents^      Scans of documents – ads, articles, books, manuals, papers, reports, technical notes, etc.",
-            "Hardware^       Technical details on each of the devices",
-            "History^        History of the IBM 1620 and 1710",
-            "IBM 1620 Jr.^   Information about all of the known IBM 1620 and 1710 installations",
-            "Installations^  Information about the IBM 1620 Jr. project",
-            "Links^          Links to other IBM 1620 websites",
-            "Photos^         Photos of IBM 1620 devices and machines in use",
-            "Restoration^    Informatin about the CHM IBM1620 Restoration project",
-            "Simulators^     Information about IBM 1620 simulators",
-            "Software^       Software for the IBM 1620",
-            "Overview^       A summary of the IBM 1620 and this site"];
+            "Architecture^   Architectural descriptions of the IBM 1620 / 1710 / 1720.",
+            "Documents^      Ads, articles, books, manuals, papers, reports, technical notes, etc.",
+            "Hardware^       Technical details on the IBM 1620 / 1710 / 1720.",
+            "History^        History of the IBM 1620 / 1710 / 1720.",
+            "IBM 1620 Jr.^   Information about the CHM IBM 1620 Jr. project.",
+            "Installations^  Information about all of the known IBM 1620 / 1710 / 1720 installations.",
+            "Links^          Links to other IBM 1620 / 1710 / 1720 websites.",
+            "Photos^         Photos of IBM 1620 / 1710 / 1720 devices and machines in use.",
+            "Restoration^    Information about the CHM IBM 1620 Restoration project.",
+            "Simulators^     Information about IBM 1620 simulators.",
+            "Software^       Software for the IBM 1620.",
+            "Overview^       A summary of the IBM 1620 / 1710 / 1720 and this site."];
 
     /**************************************/
     function $$(id) {
@@ -53,8 +59,7 @@ const globalLoad = (ev) => {
 
         selectorSwitch.setChangeListener((position) => {
             setTimeout(() => {
-  /*              alert(`Position ${position}, "${switchCaptions[position]}," was selected.`); */
-                alert(`Position ${position}, "${switchCaptions[position]}," was selected.\nheight = ` + window.innerHeight + `, width = ` + window.innerWidth);
+                alert(`Position ${position}, "${switchCaptions[position]}," was selected.`);
             }, 500);
         });
     }
