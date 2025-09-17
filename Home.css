@@ -39,7 +39,6 @@ BODY {
 
 #HomeTitleBox {
     position:           absolute;
-*    top:                0;              /* was calc(var(--heading-height)/2); */
     top:                calc(var(--heading-height)/5);
     left:               0;
     width:              calc(100% - 32px - var(--sys-image-height)*var(--sys-image-aspect));
