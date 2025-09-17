@@ -27,18 +27,32 @@ const globalLoad = (ev) => {
     let boundResizeWindow = resizeWindow.bind(window);
 
     const switchCaptions = [
-            "Architecture^   Architectural descriptions of the IBM 1620 / 1710 / 1720.^                 ./Architecture/Architecture.html",
-            "Documents^      Ads, articles, books, manuals, papers, reports, technical notes, etc.^     ./Documents/Documents.html",
-            "Hardware^       Technical details on the IBM 1620 / 1710 / 1720.^                          ./Hardware/Hardware.html",
-            "History^        History of the IBM 1620 / 1710 / 1720.^                                    ./History/History.html",
-            "IBM 1620 Jr.^   Information about the CHM IBM 1620 Jr. project.^                           ./Junior/Junior.html",
-            "Installations^  Information about all of the known IBM 1620 / 1710 / 1720 installations.^  ./Installations/Installations.html",
-            "Links^          Links to other IBM 1620 / 1710 / 1720 websites.^                           ./Links/Links.html",
-            "Photos^         Photos of IBM 1620 / 1710 / 1720 devices and machines in use.^             ./Photos/Photos.html",
-            "Restoration^    Information about the CHM IBM 1620 Restoration project.^                   ./Restoration/Restoration.html",
-            "Simulators^     Information about IBM 1620 simulators.^                                    ./Simulators/Simulators.html",
-            "Software^       Software for the IBM 1620.^                                                ./Software/Software.html",
-            "Overview^       A summary of the IBM 1620 / 1710 / 1720 and this site.^                    ./Overview/Overview.html"];
+            "Architecture^   Architectural descriptions of the IBM 1620 / 1710 / 1720.",
+            "Documents^      Ads, articles, books, manuals, papers, reports, technical notes, etc.",
+            "Hardware^       Technical details on the IBM 1620 / 1710 / 1720.",
+            "History^        History of the IBM 1620 / 1710 / 1720.",
+            "IBM 1620 Jr.^   Information about the CHM IBM 1620 Jr. project.",
+            "Installations^  Information about all of the known IBM 1620 / 1710 / 1720 installations.",
+            "Links^          Links to other IBM 1620 / 1710 / 1720 websites.",
+            "Photos^         Photos of IBM 1620 / 1710 / 1720 devices and machines in use.",
+            "Restoration^    Information about the CHM IBM 1620 Restoration project.",
+            "Simulators^     Information about IBM 1620 simulators.",
+            "Software^       Software for the IBM 1620.",
+            "Overview^       A summary of the IBM 1620 / 1710 / 1720 and this site."];
+
+    const switchURLs = [
+            "./Architecture/Architecture.html",
+            "./Documents/Documents.html",
+            "./Hardware/Hardware.html",
+            "./History/History.html",
+            "./Junior/Junior.html",
+            "./Installations/Installations.html",
+            "./Links/Links.html",
+            "./Photos/Photos.html",
+            "./Restoration/Restoration.html",
+            "./Simulators/Simulators.html",
+            "./Software/Software.html",
+            "./Overview/Overview.html"];
 
     /**************************************/
     function $$(id) {
@@ -59,7 +73,7 @@ const globalLoad = (ev) => {
 
         selectorSwitch.setChangeListener((position) => {
             setTimeout(() => {
-                window.open(`${switchCaptions[position].split("^")[2].trim()}`,"_self");
+                window.open(`${switchURLs[position].trim()}`,"_self");
             }, 500);
         });
     }
