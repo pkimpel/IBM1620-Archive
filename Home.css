@@ -25,8 +25,8 @@ BODY {
     margin:             4px;
     padding:            0;
     --heading-height:   25vmin;
-    --sys-image-height: 20vmin;
-    --sys-image-aspect: 1.83;
+    --sys-image-height: 25vmin;
+    --sys-image-aspect: 1.19;
     --sel-div-height:   50vmin}
 
 #HomeHeader {
@@ -73,7 +73,7 @@ BODY {
     right:              0;
     width:              calc(var(--sys-image-height)*var(--sys-image-aspect));
     color:              black;
-    font-size:          calc((var(--heading-height) - var(--sys-image-height))/4);
+    font-size:          1.25vmin;
     font-style:         italic;
     text-align:         right;
     padding-left:       8px;
