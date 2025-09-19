@@ -23,8 +23,8 @@ import {SelectorSwitch} from "./SelectorSwitch.js";
 
 const globalLoad = (ev) => {
     const initialSwitchPosition = 11;
-    let selectorSwitch = null;
-    let boundResizeWindow = resizeWindow.bind(window);
+    const configStorageName = "IBM1620-Archive-Home-Config";
+    const configVersion = 1;
 
     const switchCaptions = [
             "Architecture^   Architectural descriptions of the IBM 1620 / 1710 / 1720.",
@@ -53,6 +53,11 @@ const globalLoad = (ev) => {
             "./Simulators/Simulators.html",
             "./Software/Software.html",
             "./Overview/Overview.html"];
+
+    const boundResizeWindow = resizeWindow.bind(window);
+    let selectorSwitch = null;          // modeled after the 1620 MAR Selector Switch
+    let homeConfig = null;              // dynamic configuration structure for the home page
+
 
     /**************************************/
     function $$(id) {
@@ -118,8 +123,25 @@ const globalLoad = (ev) => {
     /***** globalLoad() outer block *****/
 
     if (checkBrowser()) {
-        buildSelectorSwitch(initialSwitchPosition);
+        // Load or create the system configuration data.
+        const s = localStorage.getItem(configStorageName) ?? "";
+        try {
+            homeConfig = JSON.parse(s);
+        } catch (e) {
+            homeConfig = {
+                version: configVersion,
+                switchPos: initialSwitchPosition
+            };
+        }
+
+        buildSelectorSwitch(homeConfig.switchPos);
+
         window.addEventListener("resize", boundResizeWindow);
+        window.addEventListener("pagehide", (ev) => {
+            // Save the current SelectorSwitch position.
+            homeConfig.switchPos = selectorSwitch?.position ?? initialSwitchPosition;
+            localStorage.setItem(configStorageName, JSON.stringify(homeConfig));
+        });
     }
 } // globalLoad
 
