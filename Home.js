@@ -17,6 +17,7 @@
 *   Add hover pop-ups.
 * 2025-09-15  D.Babcock
 *   Minor layout and text changes.
+* For later revisions, see the IBM1620-Archive github repository.
 ***********************************************************************/
 
 import {SelectorSwitch} from "./SelectorSwitch.js";
@@ -78,7 +79,7 @@ const globalLoad = (ev) => {
 
         selectorSwitch.setChangeListener((position) => {
             setTimeout(() => {
-                window.open(`${switchURLs[position].trim()}`,"_self");
+                window.open(`${switchURLs[position].trim()}`, "_self");
             }, 500);
         });
     }

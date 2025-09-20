@@ -13,6 +13,7 @@
 *   Reworked object sizing to scale with different window sizes.
 * 2025-09-15  P.Kimpel
 *   Added hover pop-ups.
+* For later revisions, see the IBM1620-Archive github repository.
 ***********************************************************************/
 
 export {SelectorSwitch};

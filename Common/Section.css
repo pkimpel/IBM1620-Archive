@@ -1,0 +1,103 @@
+/***********************************************************************
+* IBM1620.org/Common/Section.css
+************************************************************************
+* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
+* Licensed under the MIT License, see
+*       http://www.opensource.org/licenses/mit-license.php
+************************************************************************
+* IBM 1620 archive common section style sheet.
+************************************************************************
+* 2025-09-17  D.Babcock
+*   Original version.
+* For later revisions, see the IBM1620-Archive github repository.
+***********************************************************************/
+
+BODY {
+    cursor:             default;
+    position:           relative;
+    height:             calc(100% - 8px);
+    background-color:   #F9F6EE;
+    margin:             4px;
+    padding:            0;
+    --heading-height:   5vmin}
+
+#SectionHeader {
+    position:           absolute;
+    top:                1vmin;
+    left:               1vmin;
+    height:             var(--heading-height);
+    width:              98%}
+#SectionSite {
+    position:           absolute;
+    top:                0;
+    left:               0;
+    height:             var(--heading-height);
+    transform:          translate(0, -15%);
+    cursor:             pointer;
+    color:              var(--ibm-blue);
+    font-family:        City BQ Bold, Arial, sans-serif;
+    font-size:          var(--heading-height);
+    font-weight:        bold;
+    letter-spacing:     2px;
+    text-align:         left;
+    text-shadow:        -1px -1px 0 var(--ibm-gray),
+                         1px -1px 0 var(--ibm-gray),
+                        -1px  1px 0 var(--ibm-gray),
+                         1px  1px 0 var(--ibm-gray)}
+#SectionTitle {
+    position:           absolute;
+    top:                0;
+    right:              7vmin;
+    height:             var(--heading-height);
+    transform:          translate(0, -15%);
+    color:              black;
+    font-family:        DejaVuSansWeb, sans-serif;
+    font-size:          var(--heading-height);
+    font-weight:        bold;
+    text-align:         right}
+#SectionSelector img {
+    position:           absolute;
+    top:                0;
+    right:              0;
+    height:             100%;
+    cursor:             pointer;
+    transform:          translate(0, -10%)}
+#SeparatorLine {
+    position:           absolute;
+    top:                var(--heading-height);
+    left:               0;
+    width:              100%;
+    background-color:   var(--ibm-blue);
+    height:             calc(1vmin * 0.5);
+    border-top:         calc(1vmin * 0.25) solid var(--ibm-gray);
+    border-bottom:      calc(1vmin * 0.25) solid var(--ibm-gray);
+    box-sizing:         content-box}
+
+#SectionMenu {
+    position:           absolute;
+    top:                100%;
+    right:              0;
+    background:         white;
+    border:             1px solid var(--ibm-gray);
+    border-radius:      4px;
+    display:            none;
+    min-width:          12em;
+    z-index:            1000;
+    box-shadow:         0 2px 5px rgba(0,0,0,0.2)}
+#SectionMenu a {
+    display:            block;
+    padding:            0.5em 1em;
+    color:              black;
+    text-decoration:    none;
+    font-family:        DejaVuSansWeb, sans-serif}
+#SectionMenu a:hover {
+    background:         var(--ibm-blue);
+    color:              white}
+#SectionMenu.show {
+    display:            block}
+
+#SectionContent {
+    position:           absolute;
+    top:                calc(var(--heading-height) + 6vmin);
+    left:               0;
+}
