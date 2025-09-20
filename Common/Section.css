@@ -89,7 +89,8 @@ BODY {
     padding:            0.5em 1em;
     color:              black;
     text-decoration:    none;
-    font-family:        DejaVuSansWeb, sans-serif}
+    font-family:        DejaVuSansWeb, sans-serif;
+    font-size:          3vmin}
 #SectionMenu a:hover {
     background:         var(--ibm-blue);
     color:              white}
