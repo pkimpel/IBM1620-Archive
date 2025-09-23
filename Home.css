@@ -26,9 +26,10 @@ BODY {
     margin:             4px;
     padding:            0;
     --heading-height:   25vmin;
+    --footer-height:    7vmin;
     --sys-image-height: 25vmin;
     --sys-image-aspect: 1.19;
-    --sel-div-height:   50vmin}
+    --selector-height:  30vmin}
 
 #HomeHeader {
     position:           absolute;
@@ -83,17 +84,17 @@ BODY {
 #SelectorDiv {
     position:           absolute;
     top:                var(--heading-height);
-    height:             var(--sel-div-height);
+    height:             calc(100% - var(--heading-height) - var(--footer-height));
     left:               50%;
     width:              100%;
     transform:          translate(-50%, 0)}
 #SelectorSwitchDiv {
     position:           absolute;
-    top:                50%;
+    top:                10vh;
     left:               50%;
-    width:              30vmin;
-    height:             30vmin;
-    transform:          translate(-50%, -50%)}
+    width:              var(--selector-height);
+    height:             var(--selector-height);
+    transform:          translate(-50%, 0)}
 #SelectorSwitchDiv .SelectorSwitchCaption {
     position:           absolute;
     height:             2em;
@@ -127,7 +128,7 @@ BODY {
 #HomeFooter {
     position:           absolute;
     bottom:             0;
-    height:             7vmin;
+    height:             var(--footer-height);
     width:              100%}
 #CHMLogo {
     position:           absolute;
@@ -157,3 +158,24 @@ BODY {
     font-size:          1.2vmin;
     font-style:         italic;
     text-align:         right}
+
+#ZoomImageModal {
+    background-color:   rgba(0, 0, 0, 0.8)}
+#ZoomImageClose {
+    color:              #CCC}
+#ZoomImageClose:hover,
+#ZoomImageClose:focus {
+    color:              red;
+    text-decoration:    none;
+    cursor:             pointer}
+#ZoomImage {
+    position:           absolute;
+    top:                50%;
+    left:               50%;
+    transform:          translate(-50%, -50%);
+    width:              98vmin;
+    max-height:         98vmin;
+    padding:            0;
+    border:             4px solid black;
+    border-radius:      16px;
+    box-shadow:         12px 12px 12px black}

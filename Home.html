@@ -29,17 +29,27 @@
 <meta http-equiv="Content-Style-Type" content="text/css">
 <link id=defaultStyleSheet rel=stylesheet type="text/css" href="./Common/Common.css">
 <link id=homeStyleSheet rel=stylesheet type="text/css" href="./Home.css">
-<script type=module src="./Home.js"></script>
 
+<style type="text/css">
+    BODY {visibility: hidden}
+</style>
+
+<script type=module src="./Home.js"></script>
 </head>
 
 <body>
 <div id=HomeHeader>
     <div id=HomeTitleBox>
         <div id=HomeTitle>THE IBM 1620 SYSTEM ARCHIVE</div>
-        <div id=HomeSubTitle>The largest repository of IBM 1620 information.</div>
+        <div id=HomeSubTitle>The largest repository of IBM 1620 information</div>
+
+    <!-- Temporary: delete when in production mode -->
+    <div style="font-size:3vmin; font-weight:bold; font-style:italic; color:red">UNDER CONSTRUCTION</div>
     </div>
-    <a href="./Images/IBM_1620_system_large.png" target="_blank"><img id=HomeSystemImage src="./Images/IBM_1620_system.jpg" alt="IBM 1620 Computer System"></a>
+
+    </div>
+        <img id=HomeSystemImage src="./Images/IBM_1620_system.jpg" alt="IBM 1620 Computer System"
+             title="Click to zoom; click again to collapse">
     <div id=HomeSystemCaption>The IBM 1620 was IBM's low-end scientific computer in the early 1960s.</div>
 </div>
 
@@ -53,5 +63,13 @@
     <div id=DisclaimerFooter>Not affiliated with the International Business Machines Corporation.<br>
     All copyrights are recognized as belonging to their owners. All other rights are reserved.</div>
 </div>
+
+<div id=ZoomImageModal class=modal>
+    <span id=ZoomImageClose class=closeIcon
+          title="Click to close the zoomed image">&times;</span>
+    <img id=ZoomImage src="Images/IBM_1620_system.jpg" alt="Zoomed image"
+         title="Zoomed image – click to close">
+</div>
+
 </body>
 </html>

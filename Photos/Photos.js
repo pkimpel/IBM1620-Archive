@@ -5,11 +5,15 @@
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
-* IBM 1620 archive Photos page routines.
+* IBM 1620 Archive Photos page routines.
 ************************************************************************
 * 2025-09-20  D.Babcock
 *   Initial version.
 * For later revisions, see the IBM1620-Archive github repository.
 ***********************************************************************/
 
-window.addEventListener("load", function() {saveSelectorPosition(photosPosition);}, {once: true});
+import {Section} from "../Common/Section.js";
+
+window.addEventListener("load", function() {
+    Section.buildMenu(Section.photosPosition);
+}, {once: true});

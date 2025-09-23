@@ -24,8 +24,7 @@ import {SelectorSwitch} from "./SelectorSwitch.js";
 
 const globalLoad = (ev) => {
     const initialSwitchPosition = 11;
-    const configStorageName = "IBM1620-Archive-Home-Config";
-    const configVersion = 1;
+    const configStorageName = "IBM1620-Archive-Site-Config";
 
     const switchCaptions = [
             "Architecture^   Architectural descriptions of the IBM 1620 / 1710 / 1720.",
@@ -55,9 +54,8 @@ const globalLoad = (ev) => {
             "./Software/Software.html",
             "./Overview/Overview.html"];
 
-    const boundResizeWindow = resizeWindow.bind(window);
     let selectorSwitch = null;          // modeled after the 1620 MAR Selector Switch
-    let homeConfig = null;              // dynamic configuration structure for the home page
+    let lastPosition = -1;              // last selector position
 
 
     /**************************************/
@@ -80,8 +78,23 @@ const globalLoad = (ev) => {
         selectorSwitch.setChangeListener((position) => {
             setTimeout(() => {
                 window.open(`${switchURLs[position].trim()}`, "_self");
-            }, 500);
+            }, lastPosition == position ? 20 : 500);
+            lastPosition = position;
         });
+    }
+
+    /**************************************/
+    function zoomImageOpen(ev) {
+        /* Open an image as zoomed when it is clicked */
+
+        $$("ZoomImageModal").style.display = "block";
+    }
+
+    /**************************************/
+    function zoomImageClose(ev) {
+        /* Closes the zoomed image when it or its close icon is clicked */
+
+        $$("ZoomImageModal").style.display = "none";
     }
 
     /**************************************/
@@ -99,17 +112,17 @@ const globalLoad = (ev) => {
         /* Checks whether this browser can support the necessary stuff */
         let missing = "";
 
-        if (!window.ArrayBuffer) {missing += ", ArrayBuffer"}
-        if (!window.DataView) {missing += ", DataView"}
-        if (!window.Blob) {missing += ", Blob"}
-        if (!window.File) {missing += ", File"}
-        if (!window.FileReader) {missing += ", FileReader"}
-        if (!window.FileList) {missing += ", FileList"}
-        if (!window.indexedDB) {missing += ", IndexedDB"}
+        //if (!window.ArrayBuffer) {missing += ", ArrayBuffer"}
+        //if (!window.DataView) {missing += ", DataView"}
+        //if (!window.Blob) {missing += ", Blob"}
+        //if (!window.File) {missing += ", File"}
+        //if (!window.FileReader) {missing += ", FileReader"}
+        //if (!window.FileList) {missing += ", FileList"}
+        //if (!window.indexedDB) {missing += ", IndexedDB"}
         if (!window.JSON) {missing += ", JSON"}
         if (!window.localStorage) {missing += ", LocalStorage"}
-        if (!(window.performance && "now" in performance)) {missing += ", performance.now"}
-        if (!window.Promise) {missing += ", Promise"}
+        //if (!(window.performance && "now" in performance)) {missing += ", performance.now"}
+        //if (!window.Promise) {missing += ", Promise"}
 
         if (missing.length == 0) {
             return true;
@@ -124,25 +137,29 @@ const globalLoad = (ev) => {
     /***** globalLoad() outer block *****/
 
     if (checkBrowser()) {
-        // Load or create the system configuration data.
+        /* Load the site configuration data to get the last selector switch
+        position. If it doesn't exist, we just go to the initial position.
+        We don't need to save a configuration, because each section will do so */
+
         const s = localStorage.getItem(configStorageName) ?? "";
+        lastPosition = initialSwitchPosition;
+
         try {
-            homeConfig = JSON.parse(s);
+            const siteConfig = JSON.parse(s);
+            lastPosition = siteConfig.switchPos ?? initialSwitchPosition;
         } catch (e) {
-            homeConfig = {
-                version: configVersion,
-                switchPos: initialSwitchPosition
-            };
+            // do nothing
+        } finally {
+            buildSelectorSwitch(lastPosition);
         }
 
-        buildSelectorSwitch(homeConfig.switchPos);
+        document.body.style.visibility = "visible";
+        window.addEventListener("resize", resizeWindow);
 
-        window.addEventListener("resize", boundResizeWindow);
-        window.addEventListener("pagehide", (ev) => {
-            // Save the current SelectorSwitch position.
-            homeConfig.switchPos = selectorSwitch?.position ?? initialSwitchPosition;
-            localStorage.setItem(configStorageName, JSON.stringify(homeConfig));
-        });
+        $$("HomeSystemImage").addEventListener("click", zoomImageOpen);
+        $$("ZoomImage").addEventListener("click", zoomImageClose);
+        $$("ZoomImageModal").addEventListener("click", zoomImageClose);
+        $$("ZoomImageClose").addEventListener("click", zoomImageClose);
     }
 } // globalLoad
 

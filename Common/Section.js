@@ -12,74 +12,134 @@
 * For later revisions, see the IBM1620-Archive github repository.
 ***********************************************************************/
 
-const overviewPosition      = 11;
-const architecturePosition  =  0;
-const documentsPosition     =  1;
-const hardwarePosition      =  2;
-const historyPosition       =  3;
-const juniorPosition        =  4;
-const installationsPosition =  5;
-const linksPosition         =  6;
-const photosPosition        =  7;
-const restorationPosition   =  8;
-const simulatorsPosition    =  9;
-const softwarePosition      = 10;
+export {Section};
 
-const saveSelectorPosition = (currentPosition) => {
-    const configStorageName = "IBM1620-Archive-Home-Config";
-    const configVersion = 1;
+class Section {
 
-    let sectionConfig = null;
+    static configStorageName            = "IBM1620-Archive-Site-Config";
+    static configVersion                = 1;
 
-    if (window.localStorage && window.JSON) {
-        const s = localStorage.getItem(configStorageName) ?? "";
-        try {
-            sectionConfig = JSON.parse(s);
-            sectionConfig.switchPos = currentPosition;
-        } catch (e) {
-            sectionConfig = {
-                version: configVersion,
-                switchPos: currentPosition
-            };
+    static overviewPosition             = 11;
+    static architecturePosition         =  0;
+    static documentsPosition            =  1;
+    static hardwarePosition             =  2;
+    static historyPosition              =  3;
+    static juniorPosition               =  4;
+    static installationsPosition        =  5;
+    static linksPosition                =  6;
+    static photosPosition               =  7;
+    static restorationPosition          =  8;
+    static simulatorsPosition           =  9;
+    static softwarePosition             = 10;
+
+    static menuEntries = [
+        {pos: -1, text: "Home",          href: "../Home.html",                        icon: ""},
+        {pos: 11, text: "Overview",      href: "../Overview/Overview.html",           icon: "Section_overview.png"},
+        {pos:  0, text: "Architecture",  href: "../Architecture/Architecture.html",   icon: "Section_architecture.png"},
+        {pos:  1, text: "Documents",     href: "../Documents/Documents.html",         icon: "Section_documents.png"},
+        {pos:  2, text: "Hardware",      href: "../Hardware/Hardware.html",           icon: "Section_hardware.png"},
+        {pos:  3, text: "History",       href: "../History/History.html",             icon: "Section_history.png"},
+        {pos:  4, text: "IBM 1620 Jr.",  href: "../Junior/Junior.html",               icon: "Section_junior.png"},
+        {pos:  5, text: "Installations", href: "../Installations/Installations.html", icon: "Section_installations.png"},
+        {pos:  6, text: "Links",         href: "../Links/Links.html",                 icon: "Section_links.png"},
+        {pos:  7, text: "Photos",        href: "../Photos/Photos.html",               icon: "Section_photos.png"},
+        {pos:  8, text: "Restoration",   href: "../Restoration/Restoration.html",     icon: "Section_restoration.png"},
+        {pos:  9, text: "Simulators",    href: "../Simulators/Simulators.html",       icon: "Section_simulators.png"},
+        {pos: 10, text: "Software",      href: "../Software/Software.html",           icon: "Section_software.png"},
+    ];
+
+
+    /**************************************/
+    static $$(id) {
+        return document.getElementById(id);
+    }
+
+    /**************************************/
+    static openMenu(ev) {
+        /* Opens the menu */
+
+        if (!(ev.target.tagName == "A" && ev.target.parentElement.id == "SectionSite")) {
+            Section.$$("MenuContent").classList.toggle("show");
+            ev.stopPropagation();
+        }
+    }
+
+    /**************************************/
+    static closeMenu(ev) {
+        /* Closes the menu */
+
+        Section.$$("MenuContent").classList.remove("show");
+        ev.stopPropagation();
+    }
+
+    /**************************************/
+    static saveSelectorPosition(currentPosition) {
+        /* Updates the selector position in the site config to the current page */
+        let siteConfig = null;
+
+        if (window.localStorage && window.JSON) {
+            const s = localStorage.getItem(Section.configStorageName) ?? "";
+            try {
+                siteConfig = JSON.parse(s);
+                siteConfig.switchPos = currentPosition;
+            } catch (e) {
+                siteConfig = {
+                    version: Section.configVersion,
+                    switchPos: currentPosition
+                };
+            }
+
+            localStorage.setItem(Section.configStorageName, JSON.stringify(siteConfig));
+        }
+    }
+
+    /**************************************/
+    static buildMenu(position) {
+        /* Constructs the drop-down menu and inserts it into the DOM */
+        let menuButton = Section.$$("MenuBtn");
+        const sectionHeader = Section.$$("SectionHeader");
+
+        // Unwire and delete any existing menu button.
+        window.removeEventListener("click", Section.closeMenu);
+        if (menuButton) {
+            sectionHeader.removeEventListener("click", Section.openMenu);
+            menuButton.parentChild.removeChild(menuButton);
         }
 
-        localStorage.setItem(configStorageName, JSON.stringify(sectionConfig));
+        // Empty any Selector contents and create the menu container.
+        const selector = Section.$$("SectionSelector");
+        selector.textContent = "";      // delete any content in the Selector
+
+        const container = document.createElement("nav");
+        container.id = "MenuContainer";
+        selector.appendChild(container);
+
+        // Create the menu button with appropriate image and append to container.
+        menuButton = document.createElement("img");
+        menuButton.id = "MenuBtn";
+        menuButton.title = "Open a menu of pages to which you can navigate";
+        sectionHeader.addEventListener("click", Section.openMenu);
+        container.appendChild(menuButton);
+
+        // Build the menu drop-down list.
+        const content = document.createElement("div");
+        content.id = "MenuContent";
+        container.appendChild(content);
+        for (const entry of Section.menuEntries) {
+            const link = document.createElement("a");
+            link.href = entry.href;
+            link.textContent = entry.text;
+            content.appendChild(link);
+            if (entry.pos == position) {
+                menuButton.src = `../Images/${entry.icon}`;
+            }
+        }
+
+        // Wire up any click event on the window to close the menu.
+        window.addEventListener("click", Section.closeMenu);
+
+        // Save the current selector position in site config.
+        Section.saveSelectorPosition(position);
     }
-}
 
-document.addEventListener("DOMContentLoaded", function() {
-    const site = document.getElementById("SectionSite");
-    const selector = document.getElementById("SectionSelector");
-
-    fetch("../Common/Menu.html")
-        .then(response => response.text())
-        .then(html => {
-            selector.insertAdjacentHTML("beforeend", html);
-            const menu = document.getElementById("SectionMenu");
-            selector.addEventListener("click", function(event) {
-                event.stopPropagation();
-                menu.classList.toggle("show");
-            });
-            document.addEventListener("click", function() {
-                menu.classList.remove("show");
-            });
-        })
-        .catch(err => console.error("Menu load failed:", err));
-
-    if (site) {
-        site.addEventListener("click", function() {
-            window.location.href = "../Home.html";
-        });
-    }
-
-    if (selector && menu) {
-        selector.addEventListener("click", function(event) {
-            event.stopPropagation();
-            menu.classList.toggle("show");
-        });
-
-        document.addEventListener("click", function() {
-            menu.classList.remove("show");
-        });
-    }
-})
+} // class Section

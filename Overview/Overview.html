@@ -22,23 +22,41 @@
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <link id=defaultStyleSheet rel=stylesheet type="text/css" href="../Common/Common.css">
-<link id=sectionStyleSheet rel=stylesheet type="text/css" href="../Common/Section.css">
+
+<script type=module src="./Overview.js"></script>
 </head>
 
 <body>
 
 <div id=SectionHeader>
-    <div id=SectionSite>IBM 1620 ARCHIVE</div>
+    <div id=SectionSite>
+        <a href="../Home.html">IBM 1620 ARCHIVE</a>
+    </div>
     <div id=SectionTitle>Overview</div>
-    <div id=SectionSelector><img src=../Images/Section_overview.png alt="Navigation Menu"></div>
-    <div id="SeparatorLine"></div>
+    <div id=SectionSelector alt="Navigation Menu"></div>
 </div>
 
-<div id=SectionContents>
+<div id=SectionBody>
+
+<div id=BodyTitle>Here is a body title</div>
+
+<div id=BodyHeading>This is a body heading</div>
+
+<div id=BodyText>
+<p>Welcome to the IBM 1620 website, the largest repository of IBM 1620 information in the world.</p>
+<p>The IBM 1620 was IBM's low-end, scientific computer in the early 1960s.</p>
+<p>This site was created, and is maintained, by the IBM 1620 Project Team at the Computer History Museum in Mountain View, California, USA.</p>
+<p>This team was formed in the Fall of 1998 with the initial goals of restoring the museum's IBM 1620 Model 1 to operation and collecting as much information and material on the IBM 1620 / 1710 / 1720 as possible.  The project was successful and is documented here.  [put link to Restoration page here]</p>
+<p>A subset of the team started a new project in 2016 to build a functional replica of the IBM 1620, called the IBM 1620 Jr., that is rugged enough to stand up to hands-on use by museum visitors.  That project is documented here.  [put link to IBM 1620 Jr page here]</p>
+<p>This site is organized into the following sections:
+<br>
+[Insert table from _WEB_PAGES.xlsx here with links to the top-level pages.]
+</p>
+</div>
+
 </div>
 
 <script src="../Common/Section.js"></script>
-<script src="./Overview.js"></script>
 
 </body>
 </html>

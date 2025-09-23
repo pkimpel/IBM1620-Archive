@@ -1,5 +1,5 @@
 /***********************************************************************
-* IBM1620.org/Common/Common.css
+* IBM1620.org../Common../Common.css
 ************************************************************************
 * Copyright (c) 2021, Paul Kimpel.
 * Licensed under the MIT License, see
@@ -18,43 +18,45 @@
 * For later revisions, see the IBM1620-Archive github repository.
 ***********************************************************************/
 
+@import "./Section.css";
+
 @font-face {
     font-family: "DejaVuSansMonoBookWeb";
     font-weight: normal;
     font-style: normal;
-    src: url("./Resources/DejaVuSansMono-webfont.woff") format("woff"),
-         url("./Resources/DejaVuSansMono-webfont.ttf") format("truetype");
+    src: url("./DejaVuSansMono-webfont.woff") format("woff"),
+         url("./DejaVuSansMono-webfont.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "DejaVuSansMonoBookWeb";
     font-weight: bold;
     font-style: normal;
-    src: url("./Resources/DejaVuSansMono-Bold-webfont.woff") format("woff"),
-         url("./Resources/DejaVuSansMono-Bold-webfont.ttf") format("truetype");
+    src: url("./DejaVuSansMono-Bold-webfont.woff") format("woff"),
+         url("./DejaVuSansMono-Bold-webfont.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "DejaVuSansWeb";
     font-weight: normal;
     font-style: normal;
-    src: url("./Resources/DejaVuSans-webfont.woff") format("woff"),
-         url("./Resources/DejaVuSans-webfont.ttf") format("truetype");
+    src: url("./DejaVuSans-webfont.woff") format("woff"),
+         url("./DejaVuSans-webfont.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "DejaVuSansWeb";
     font-weight: bold;
     font-style: normal;
-    src: url("./Resources/DejaVuSans-Bold-webfont.woff") format("woff"),
-         url("./Resources/DejaVuSans-Bold-webfont.ttf") format("truetype");
+    src: url("./DejaVuSans-Bold-webfont.woff") format("woff"),
+         url("./DejaVuSans-Bold-webfont.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "City BQ Bold";
     font-weight: bold;
     font-style: normal;
-    src: url("./Resources/City BQ Bold.ttf") format("truetype");
+    src: url("./City BQ Bold.ttf") format("truetype");
 }
 
 HTML {
@@ -119,3 +121,45 @@ H2 {
     text-align:         right}
 .nowrap {
     white-space:        nowrap}
+
+.modal {
+    position:           fixed;
+    display:            none; /* Hidden by default */
+    z-index:            20;
+    left:               0;
+    top:                0;
+    width:              100%;
+    height:             100%;
+    background-color:   rgba(0, 0, 0, 0.5)}
+.modalContent {
+    position:           absolute;
+    background-color:   var(--wisco-shading);
+    top:                20%;
+    bottom:             20%;
+    left:               50%;
+    transform:          translate(-50%, 0);
+    width:              50%;
+    max-width:          700px;
+    overflow:           auto; /* Enable scroll if needed */
+    padding:            16px;
+    border:             2px solid black;
+    border-radius:      16px;
+    box-shadow:         12px 12px 12px black}
+
+
+.closeIcon {
+    position:           absolute;
+    color:              #AAA;
+    top:                0;
+    right:              0;
+    z-index:            10;
+    padding-top:        0px;
+    padding-right:      8px;
+    font-size:          28px;
+    font-weight:        bold}
+
+.closeIcon:hover,
+.closeIcon:focus {
+    color:              red;
+    text-decoration:    none;
+    cursor:             pointer}
