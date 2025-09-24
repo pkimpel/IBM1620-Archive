@@ -20,7 +20,10 @@ BODY {
     margin:             4px;
     padding:            0;
     --heading-height:   4vmin;
-    --body-text-height: 2.5vmin}
+    --body-text-height: 2.5vmin;
+    --body-title-height: 4vmin;
+    --body-space-height: 3vmin;
+    --body-header-height: 3vmin}
 
 #SectionHeader {
     position:           absolute;
@@ -28,7 +31,7 @@ BODY {
     left:               8px;
     right:              8px;
     height:             var(--heading-height);
-    border-bottom:      2px solid var(--ibm-blue)}
+    border-bottom:      4px solid var(--ibm-blue)}
 #SectionSite {
     position:           absolute;
     top:                0;
@@ -103,7 +106,30 @@ BODY {
     left:               8px;
     right:              8px;
     height:             calc(100% - (var(--heading-height) + 1vmin + 8px));
-    overflow-y:         auto}
+    overflow:           auto}
+
+#BodyTitle {
+    position:           static;
+    color:              black;
+    font-family:        DejaVuSansWeb, sans-serif;
+    font-size:          var(--body-title-height);
+    font-weight:        bold;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-align:         center}
+
+#BodySpace {
+    position:           static;
+    height:             var(--body-space-height)}
+
+#BodyHeader {
+    position:           static;
+    color:              black;
+    font-family:        DejaVuSansWeb, sans-serif;
+    font-size:          var(--body-header-height);
+    font-weight:        bold;
+    text-decoration:    underline;
+    text-align:         left}
 
 #BodyText {
     position:           static;
