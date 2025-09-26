@@ -66,6 +66,7 @@ BODY {
 
 #HomeSystemImage {
     position:           absolute;
+    cursor:             zoom-in;
     top:                0;
     right:              0;
     height:             var(--sys-image-height)}
@@ -119,7 +120,7 @@ BODY {
     left:               0;
     right:              0;
     overflow:           hidden;
-    cursor:             pointer;
+/*    cursor:             grab;  /* For when you can grab and turn the selector knob */
     border:             3px solid silver;
     background-image:   radial-gradient(circle, #DDD, #CCC 40%, #999 80%, #666 90%);
     border-radius:      50%;

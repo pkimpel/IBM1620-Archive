@@ -118,6 +118,7 @@ class Section {
         menuButton = document.createElement("img");
         menuButton.id = "MenuBtn";
         menuButton.title = "Open a menu of pages to which you can navigate";
+        menuButton.style.cursor = "pointer";
         sectionHeader.addEventListener("click", Section.openMenu);
         container.appendChild(menuButton);
 
