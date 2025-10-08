@@ -34,11 +34,11 @@ const globalLoad = (ev) => {
             "IBM 1620 Jr.^   Information about the CHM IBM 1620 Jr. project.",
             "Installations^  Information about all of the known IBM 1620 / 1710 / 1720 installations.",
             "Links^          Links to other IBM 1620 / 1710 / 1720 websites.",
-            "Photos^         Photos of IBM 1620 / 1710 / 1720 devices and machines in use.",
+            "Photos^         Photos of IBM 1620 / 1710 / 1720 systems and peripherals.",
             "Restoration^    Information about the CHM IBM 1620 Restoration project.",
             "Simulators^     Information about IBM 1620 simulators.",
             "Software^       Software for the IBM 1620.",
-            "Introduction^   An introduction of the IBM 1620 / 1710 / 1720 and this site."];
+            "Introduction^   An introduction to the IBM 1620 / 1710 / 1720 and this website."];
 
     const switchURLs = [
             "./Architecture/Architecture.html",
