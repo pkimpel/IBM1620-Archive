@@ -5,7 +5,7 @@
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
-* IBM 1620 archive common section style sheet.
+* IBM 1620 Archive common section style sheet.
 ************************************************************************
 * 2025-09-17  D.Babcock
 *   Original version.
@@ -16,14 +16,14 @@ BODY {
     cursor:             default;
     position:           relative;
     height:             calc(100% - 8px);
-    background-color:   #F9F6EE;
     margin:             4px;
     padding:            0;
-    --heading-height:   4vmin;
-    --body-text-height: 2.5vmin;
-    --body-title-height: 4vmin;
-    --body-space-height: 3vmin;
-    --body-header-height: 3vmin}
+    --heading-height:     4vmin;
+    --body-title-height:  4vmin;
+    --body-header-height: 3vmin;
+    --body-space-height:  3vmin;
+    --body-text-height:   2.5vmin;
+    --body-table-height:  2vmin}
 
 #SectionHeader {
     position:           absolute;
@@ -81,7 +81,7 @@ BODY {
     display:            none;
     top:                var(--heading-height);
     right:              0;
-    background-color:   #f1f1f1;
+    background-color:   #F1F1F1;
     width:              max-content;
     box-shadow:         0px 8px 16px 0px var(--ibm-gray);
     z-index:            1}
@@ -118,10 +118,6 @@ BODY {
     text-decoration-style: double;
     text-align:         center}
 
-#BodySpace {
-    position:           static;
-    height:             var(--body-space-height)}
-
 #BodyHeader {
     position:           static;
     color:              black;
@@ -131,10 +127,22 @@ BODY {
     text-decoration:    underline;
     text-align:         left}
 
+#BodySpace {
+    position:           static;
+    height:             var(--body-space-height)}
+
 #BodyText {
     position:           static;
     color:              black;
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          var(--body-text-height);
+    font-weight:        normal;
+    text-align:         left}
+
+#BodyTable {
+    position:           static;
+    color:              black;
+    font-family:        DejaVuSansWeb, sans-serif;
+    font-size:          var(--body-table-height);
     font-weight:        normal;
     text-align:         left}

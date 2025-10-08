@@ -22,7 +22,7 @@ BODY {
     cursor:             default;
     position:           relative;
     height:             calc(100% - 8px);
-    background-color:   #F9F6EE;
+    background-color:   var(--background-color);
     margin:             4px;
     padding:            0;
     --heading-height:   25vmin;
@@ -122,7 +122,7 @@ BODY {
     overflow:           hidden;
 /*    cursor:             grab;  /* For when you can grab and turn the selector knob */
     border:             3px solid silver;
-    background-image:   radial-gradient(circle, #DDD, #CCC 40%, #999 80%, #666 90%);
+    background-image:   radial-gradient(circle, #000DDD, #000CCC 40%, #000999 80%, #000666 90%);
     border-radius:      50%;
     box-shadow:         inset 3.75vmin 3.75vmin 7.5vmin #444}
 
@@ -163,7 +163,7 @@ BODY {
 #ZoomImageModal {
     background-color:   rgba(0, 0, 0, 0.8)}
 #ZoomImageClose {
-    color:              #CCC}
+    color:              #000CCC}
 #ZoomImageClose:hover,
 #ZoomImageClose:focus {
     color:              red;

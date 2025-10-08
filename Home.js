@@ -38,7 +38,7 @@ const globalLoad = (ev) => {
             "Restoration^    Information about the CHM IBM 1620 Restoration project.",
             "Simulators^     Information about IBM 1620 simulators.",
             "Software^       Software for the IBM 1620.",
-            "Overview^       A summary of the IBM 1620 / 1710 / 1720 and this site."];
+            "Introduction^   An introduction of the IBM 1620 / 1710 / 1720 and this site."];
 
     const switchURLs = [
             "./Architecture/Architecture.html",
@@ -52,7 +52,7 @@ const globalLoad = (ev) => {
             "./Restoration/Restoration.html",
             "./Simulators/Simulators.html",
             "./Software/Software.html",
-            "./Overview/Overview.html"];
+            "./Introduction/Introduction.html"];
 
     let selectorSwitch = null;          // modeled after the 1620 MAR Selector Switch
     let lastPosition = -1;              // last selector position
@@ -127,7 +127,7 @@ const globalLoad = (ev) => {
         if (missing.length == 0) {
             return true;
         } else {
-            alert("The emulator cannot run...\n" +
+            alert("This website cannot operate properly...\n" +
                 "your browser does not support the following features:\n\n" +
                 missing.substring(2));
             return false;

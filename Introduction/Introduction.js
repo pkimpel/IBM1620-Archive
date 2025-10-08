@@ -1,11 +1,11 @@
 /***********************************************************************
-* IBM1620.org/Architecture/Architecture.js
+* IBM1620.org/Introduction/Introduction.js
 ************************************************************************
 * Copyright (c) 2025, Paul Kimpel & Dave Babcock.
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
-* IBM 1620 Archive Architecture page routines.
+* IBM 1620 Archive Introduction page routines.
 ************************************************************************
 * 2025-09-20  D.Babcock
 *   Initial version.
@@ -15,5 +15,5 @@
 import {Section} from "../Common/Section.js";
 
 window.addEventListener("load", function() {
-    Section.buildMenu(Section.architecturePosition, 1);
+    Section.buildMenu(Section.introductionPosition, 1);
 }, {once: true});

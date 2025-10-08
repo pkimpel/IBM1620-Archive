@@ -15,5 +15,5 @@
 import {Section} from "../Common/Section.js";
 
 window.addEventListener("load", function() {
-    Section.buildMenu(Section.installationsPosition);
+    Section.buildMenu(Section.installationsPosition, 1);
 }, {once: true});

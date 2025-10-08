@@ -5,7 +5,7 @@
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
-* IBM 1620 archive common section routines.
+* IBM 1620 Archive common section routines.
 ************************************************************************
 * 2025-09-19  D.Babcock
 *   Initial version.
@@ -19,7 +19,7 @@ class Section {
     static configStorageName            = "IBM1620-Archive-Site-Config";
     static configVersion                = 1;
 
-    static overviewPosition             = 11;
+    static introductionPosition         = 11;
     static architecturePosition         =  0;
     static documentsPosition            =  1;
     static hardwarePosition             =  2;
@@ -32,20 +32,28 @@ class Section {
     static simulatorsPosition           =  9;
     static softwarePosition             = 10;
 
+    static urlLevels = [
+        {path: "./"},
+        {path: "../"},
+        {path: "../../"},
+        {path: "../../../"},
+        {path: "../../../../"}
+    ]
+
     static menuEntries = [
-        {pos: -1, text: "Home",          href: "../Home.html",                        icon: ""},
-        {pos: 11, text: "Overview",      href: "../Overview/Overview.html",           icon: "Section_overview.png"},
-        {pos:  0, text: "Architecture",  href: "../Architecture/Architecture.html",   icon: "Section_architecture.png"},
-        {pos:  1, text: "Documents",     href: "../Documents/Documents.html",         icon: "Section_documents.png"},
-        {pos:  2, text: "Hardware",      href: "../Hardware/Hardware.html",           icon: "Section_hardware.png"},
-        {pos:  3, text: "History",       href: "../History/History.html",             icon: "Section_history.png"},
-        {pos:  4, text: "IBM 1620 Jr.",  href: "../Junior/Junior.html",               icon: "Section_junior.png"},
-        {pos:  5, text: "Installations", href: "../Installations/Installations.html", icon: "Section_installations.png"},
-        {pos:  6, text: "Links",         href: "../Links/Links.html",                 icon: "Section_links.png"},
-        {pos:  7, text: "Photos",        href: "../Photos/Photos.html",               icon: "Section_photos.png"},
-        {pos:  8, text: "Restoration",   href: "../Restoration/Restoration.html",     icon: "Section_restoration.png"},
-        {pos:  9, text: "Simulators",    href: "../Simulators/Simulators.html",       icon: "Section_simulators.png"},
-        {pos: 10, text: "Software",      href: "../Software/Software.html",           icon: "Section_software.png"},
+        {pos: -1, text: "Home",          href: "Home.html",                        icon: ""},
+        {pos: 11, text: "Introduction",  href: "Introduction/Introduction.html",   icon: "Section_introduction.png"},
+        {pos:  0, text: "Architecture",  href: "Architecture/Architecture.html",   icon: "Section_architecture.png"},
+        {pos:  1, text: "Documents",     href: "Documents/Documents.html",         icon: "Section_documents.png"},
+        {pos:  2, text: "Hardware",      href: "Hardware/Hardware.html",           icon: "Section_hardware.png"},
+        {pos:  3, text: "History",       href: "History/History.html",             icon: "Section_history.png"},
+        {pos:  4, text: "IBM 1620 Jr.",  href: "Junior/Junior.html",               icon: "Section_junior.png"},
+        {pos:  5, text: "Installations", href: "Installations/Installations.html", icon: "Section_installations.png"},
+        {pos:  6, text: "Links",         href: "Links/Links.html",                 icon: "Section_links.png"},
+        {pos:  7, text: "Photos",        href: "Photos/Photos.html",               icon: "Section_photos.png"},
+        {pos:  8, text: "Restoration",   href: "Restoration/Restoration.html",     icon: "Section_restoration.png"},
+        {pos:  9, text: "Simulators",    href: "Simulators/Simulators.html",       icon: "Section_simulators.png"},
+        {pos: 10, text: "Software",      href: "Software/Software.html",           icon: "Section_software.png"}
     ];
 
 
@@ -94,7 +102,7 @@ class Section {
     }
 
     /**************************************/
-    static buildMenu(position) {
+    static buildMenu(position, level) {
         /* Constructs the drop-down menu and inserts it into the DOM */
         let menuButton = Section.$$("MenuBtn");
         const sectionHeader = Section.$$("SectionHeader");
@@ -128,11 +136,11 @@ class Section {
         container.appendChild(content);
         for (const entry of Section.menuEntries) {
             const link = document.createElement("a");
-            link.href = entry.href;
+            link.href = Section.urlLevels[level].path + entry.href;
             link.textContent = entry.text;
             content.appendChild(link);
             if (entry.pos == position) {
-                menuButton.src = `../Images/${entry.icon}`;
+                menuButton.src = Section.urlLevels[level].path + `Images/${entry.icon}`;
             }
         }
 

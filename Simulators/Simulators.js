@@ -15,5 +15,5 @@
 import {Section} from "../Common/Section.js";
 
 window.addEventListener("load", function() {
-    Section.buildMenu(Section.simulatorsPosition);
+    Section.buildMenu(Section.simulatorsPosition, 1);
 }, {once: true});

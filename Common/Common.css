@@ -5,7 +5,7 @@
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
-* IBM 1620 emulator common style sheet.
+* IBM 1620 Archive common style sheet.
 ************************************************************************
 * 2012-07-19  P.Kimpel
 *   Original version, from retro-g15 Common.css
@@ -61,14 +61,17 @@
 
 HTML {
     height:             100%;
+    -webkit-text-size-adjust:  none;
+    text-size-adjust:   none;
     --ibm-blue:         #3576BA;        /* was 718DBD, supposed to be Pantone 116-16 U (#147599), but that's UGLY */
-    --ibm-gray:         #4A4B4D}        /* was 555555, now Pantone 19-3906 TCX */
-
+    --ibm-gray:         #4A4B4D;        /* was 555555, now Pantone 19-3906 TCX */
+    --background-color: #F4F4F4;        /* off-white page background color */
+    --highlight-color:  #D3D3D3}        /* a light gray for highlighting */
 
 BODY {
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          10pt;
-    background-color:   white;
+    background-color:   var(--background-color);
     color:              black;
     height:             calc(100% - 16px);
     margin:             4px;
@@ -87,22 +90,10 @@ BODY.deviceBody {
     overflow:           hidden;
     margin:             0;
     padding:            0;
-    background-color:   #678;
+    background-color:   #000678;
     color:              white;
     user-select:        none;
     cursor:             default}
-
-H1 {
-    margin-top:         2em;
-    margin-bottom:      1em;
-    font-size:          14pt;
-    font-weight:        bold}
-
-H2 {
-    margin-top:         1em;
-    margin-bottom:      1em;
-    font-size:          12pt;
-    font-weight:        bold}
 
 .bold {
     font-weight:        bold}
@@ -133,7 +124,7 @@ H2 {
     background-color:   rgba(0, 0, 0, 0.5)}
 .modalContent {
     position:           absolute;
-    background-color:   var(--wisco-shading);
+    background-color:   var(--background-color);
     top:                20%;
     bottom:             20%;
     left:               50%;
@@ -146,10 +137,9 @@ H2 {
     border-radius:      16px;
     box-shadow:         12px 12px 12px black}
 
-
 .closeIcon {
     position:           absolute;
-    color:              #AAA;
+    color:              #000AAA;
     top:                0;
     right:              0;
     z-index:            10;
@@ -163,3 +153,31 @@ H2 {
     color:              red;
     text-decoration:    none;
     cursor:             pointer}
+
+TABLE {
+    table-layout:       auto;
+    width:              100%;
+    border-collapse:    collapse}
+
+TABLE>THEAD>TR>TH {
+    padding-top:        4px;
+    padding-bottom:     4px;
+    padding-left:       4px;
+    padding-right:      4px;
+    vertical-align:     bottom;
+    border:             1px solid var(--ibm-gray)}
+
+TABLE>TBODY>TR>TD {
+    padding-top:        4px;
+    padding-bottom:     4px;
+    padding-left:       4px;
+    padding-right:      4px;
+    vertical-align:     top;
+    border:             1px solid var(--ibm-gray)}
+
+TABLE>TBODY.altShading>TR:nth-child(even) {
+    background-color:   var(--highlight-color)}
+
+a {
+    color:              var(--ibm-blue);
+    text-decoration:    underline}
