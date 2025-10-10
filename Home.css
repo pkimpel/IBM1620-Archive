@@ -122,9 +122,9 @@ BODY {
     overflow:           hidden;
 /*    cursor:             grab;  /* For when you can grab and turn the selector knob */
     border:             3px solid silver;
-    background-image:   radial-gradient(circle, #000DDD, #000CCC 40%, #000999 80%, #000666 90%);
+    background-image:   radial-gradient(circle, #DDDDDD, #CCCCCC 40%, #999999 80%, #666666 90%);
     border-radius:      50%;
-    box-shadow:         inset 3.75vmin 3.75vmin 7.5vmin #444}
+    box-shadow:         inset 3.75vmin 3.75vmin 7.5vmin #444444}
 
 #HomeFooter {
     position:           absolute;
@@ -151,7 +151,7 @@ BODY {
     text-align:         left}
 #DisclaimerFooter {
     position:           absolute;
-    bottom:             40%;
+    bottom:             50%;
     right:              0.5vmin;
     width:              50%;
     transform:          translate(0, 50%);
