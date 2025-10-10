@@ -84,7 +84,7 @@ BODY {
     background-color:   #F1F1F1;
     width:              max-content;
     box-shadow:         0px 8px 16px 0px var(--ibm-gray);
-    z-index:            1}
+    z-index:            2}
 #MenuContent.show {
     display:            block}
 #MenuContent A {

@@ -13,7 +13,12 @@
 ***********************************************************************/
 
 import {Section} from "../Common/Section.js";
+import {TableSort} from "../Common/TableSort.js";
 
 window.addEventListener("load", function() {
     Section.buildMenu(Section.installationsPosition, 1);
 }, {once: true});
+
+for (const item of document.querySelectorAll("#InstallationTable THEAD A")) {
+    item.addEventListener("click", TableSort.sortAColumn);
+}
