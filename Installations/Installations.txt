@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IBM 1620 Installations</title>
+<!--
+/***********************************************************************
+* IBM1620.org/Installations/Installations.html
+************************************************************************
+* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
+* Licensed under the MIT License, see
+*       http://www.opensource.org/licenses/mit-license.php
+************************************************************************
+* IBM 1620 Archive Installations section page.
+************************************************************************
+* 2025-09-17  D.Babcock
+*   Initial version.
+* For later revisions, see the IBM1620-Archive github repository.
+***********************************************************************/
+-->
+<meta name="Author" content="Paul Kimpel & Dave Babcock">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link id=defaultStyleSheet rel=stylesheet type="text/css" href="../Common/Common.css">
+
+<script type=module src="./Installations.js"></script>
+</head>
+
+<body>
+
+<div id=SectionHeader>
+    <div id=SectionSite>
+        <a href="../Home.html" title="Return to the home page">IBM 1620 ARCHIVE</a>
+    </div>
+    <div id=SectionTitle>Installations</div>
+    <div id=SectionSelector alt="Navigation Menu"></div>
+</div>
+
+<div id=SectionBody>
+
+    <div id=BodyTitle>Installations</div>
+
+    <div id=BodyText>
+
+        <p>Detailed information about the IBM 1620, 1710, and 1720 Data Processing System installations no longer exists.</p>
+
+        <p>IBM physically destroyed all design, engineering, manufacturing, marketing, sales, and maintenance records after storing them for many years at the Iron Mountain facility in Felton, California.</p>
+
+        <p>The best estimates are that approximately 2,000 IBM 1620 systems were produced - half of them Model 1 and half Model 2 - and several hundred IBM 1710 systems were built.  It is known that only 3 IBM 1720 systems existed.  There is no estimate of how many systems were sold versus leased.  At their end-of-life, all leased machines were physically destroyed when returned to keep them from the secondary market.</p>
+
+        <p>It was not uncommon for purchased machines to be "handed down" to junior colleges and high schools when replaced with newer, more powerful systems.</p>
+
+        <p>The magazine "Computers and Automation" published a census of world-wide counts of installed computers almost every month during the IBM 1620's lifetime.  The census was based on end-user surveys and the counts were only as good as the surveys returned.  It's remarkable that so many government locations, companies, organizations, and schools would freely release information about what computers they had.  The census counts also do not include the number of IBM 1620 computers that IBM had installed internally.  The CA census can be found <a href=./Census/Census.html>here</a>.</p>
+
+        <p>The following list of installations was derived from many sources including membership lists of the IBM 1620 User Groups &amp; COMMON, papers, magazine &amp; newspaper articles, press releases, industry surveys, and personal accounts.  For most locations, nothing is known about the model, options, or peripherals, just that an IBM 1620 was there.</p>
+
+    </div>
+
+    <div id=BodyTable>
+        <table id=InstallationTable>
+            <thead class="sticky">
+                <tr>
+                    <th><a href="Sort" data-tsort-type=text>Site</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Location</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>System</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Model</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Core Memory</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Internal Options</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Paper Tape<br>(1621, 1624)</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Punched Card<br>(1622)</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Disk<br>(1311)</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Line Printer<br>(1443)</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Plotter<br>(1626, 1627)</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Magnetic Tape<br>(1921 / 729-II / 7330)</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Notes</a></th>
+                </tr>
+            </thead>
+            <tbody class="altShading">
+<!-- Insert data table rows extracted from Installations.xlsm between these markers.  -->
+<!-- Insert data table rows extracted from Installations.xlsm between these markers.  -->
+            <tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
