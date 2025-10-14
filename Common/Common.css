@@ -185,6 +185,12 @@ TABLE>TBODY>TR>TD {
     vertical-align:     top;
     border:             1px solid var(--ibm-gray)}
 
+IMG.border {
+    border:             1px solid black}
+
+IMG.wide {
+    width:              99%}
+
 a {
     color:              var(--ibm-blue);
     text-decoration:    underline}

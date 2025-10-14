@@ -5,7 +5,7 @@
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
-* IBM 1620 Archive Installations page routines.
+* IBM 1620 Archive Installations/Census page routines.
 ************************************************************************
 * 2025-09-20  D.Babcock
 *   Initial version.

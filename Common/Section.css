@@ -114,8 +114,7 @@ BODY {
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          var(--body-title-height);
     font-weight:        bold;
-    text-decoration-line: underline;
-    text-decoration-style: double;
+    text-decoration:    underline;
     text-align:         center}
 
 #BodyHeader {
@@ -138,6 +137,9 @@ BODY {
     font-size:          var(--body-text-height);
     font-weight:        normal;
     text-align:         left}
+
+#BodyImage {
+    position:           static}
 
 #BodyTable {
     position:           static;
