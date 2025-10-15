@@ -42,7 +42,7 @@
 
     <div id=BodyText>
 
-        <p>Very few IBM 1620 still exist.  They were either scraped by IBM when returned or by the owner when they replaced it with something newer and more capable.  Most of the remaining computers are in museums, a few are owned by private collectors.</p>
+        <p>Very few IBM 1620 still exist.  They were either scraped by IBM when returned from lease or by the owner when they replaced it with something newer and more capable.  Some of the 1620s were cannibalized for their iconic front panel.  Most of the remaining computers are in museums, a few are owned by private collectors.</p>
 
         <p>These are the known IBM 1620 computers still remaining:<p>
 
@@ -54,6 +54,7 @@
                 <tr>
                     <th><a href="Sort" data-tsort-type=text>Site</a></th>
                     <th><a href="Sort" data-tsort-type=text>Location</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Country</a></th>
                     <th class="center"><a href="Sort" data-tsort-type=text>System</a></th>
                     <th class="center"><a href="Sort" data-tsort-type=text>Model</a></th>
                     <th class="center"><a href="Sort" data-tsort-type=text>Core Memory</a></th>

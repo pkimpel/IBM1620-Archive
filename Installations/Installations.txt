@@ -72,6 +72,7 @@
                 <tr>
                     <th><a href="Sort" data-tsort-type=text>Site</a></th>
                     <th><a href="Sort" data-tsort-type=text>Location</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Country</a></th>
                     <th class="center"><a href="Sort" data-tsort-type=text>System</a></th>
                     <th class="center"><a href="Sort" data-tsort-type=text>Model</a></th>
                     <th class="center"><a href="Sort" data-tsort-type=text>Core Memory</a></th>
