@@ -27,18 +27,18 @@ const globalLoad = (ev) => {
     const configStorageName = "IBM1620-Archive-Site-Config";
 
     const switchCaptions = [
-            "Architecture^   Architectural descriptions of the IBM 1620 / 1710 / 1720.",
+            "Architecture^   Architectural descriptions of the IBM 1620.",
             "Documents^      Ads, articles, books, manuals, papers, reports, technical notes, etc.",
-            "Hardware^       Technical details on the IBM 1620 / 1710 / 1720.",
-            "History^        History of the IBM 1620 / 1710 / 1720.",
+            "Hardware^       Technical details on the IBM 1620.",
+            "History^        History of the IBM 1620.",
             "IBM 1620 Jr.^   Information about the CHM IBM 1620 Jr. project.",
-            "Installations^  Information about all of the known IBM 1620 / 1710 / 1720 installations.",
-            "Links^          Links to other IBM 1620 / 1710 / 1720 websites.",
-            "Photos^         Photos of IBM 1620 / 1710 / 1720 systems and peripherals.",
+            "Installations^  Information about all of the known IBM 1620 installations.",
+            "Links^          Links to other IBM 1620 websites.",
+            "Photos^         Photos of IBM 1620 systems and peripherals.",
             "Restoration^    Information about the CHM IBM 1620 Restoration project.",
             "Simulators^     Information about IBM 1620 simulators.",
             "Software^       Software for the IBM 1620.",
-            "Introduction^   An introduction to the IBM 1620 / 1710 / 1720 and this website."];
+            "Introduction^   An introduction to the IBM 1620 and this website."];
 
     const switchURLs = [
             "./Architecture/Architecture.html",

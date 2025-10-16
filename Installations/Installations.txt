@@ -38,11 +38,11 @@
 
 <div id=SectionBody>
 
-    <div id=BodyTitle>IBM 1620 / 1710 / 1720 Installations</div>
+    <div id=BodyTitle>IBM 1620 Installations</div>
 
     <div id=BodyText>
 
-        <p>Detailed information about the IBM 1620, 1710, and 1720 Data Processing System installations no longer exists.</p>
+        <p>Detailed information about the IBM 1620 Data Processing System installations no longer exists.</p>
 
         <p>IBM physically destroyed all design, engineering, manufacturing, marketing, sales, and maintenance records after storing them for many years at the Iron Mountain facility in Felton, California.</p>
 

@@ -42,7 +42,7 @@
 
     <div id=BodyText>
 
-        <p>This page contains published advertisements related to the IBM 1620.  To date, no ads have been found for the IBM 1710 or 1720.</p>
+        <p>This page contains published advertisements related to the IBM 1620.</p>
 
         <p>The types of ads include:<br>
            &nbsp; 1 - IBM ads for the 1620.<br>
@@ -61,7 +61,7 @@
             <thead class="sticky">
                 <tr>
                     <th><a href="Sort" data-tsort-type=text>Title</a></th>
-                    <th><a href="Sort" data-tsort-type=text>Type</a></th>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Type</a></th>
                     <th><a href="Sort" data-tsort-type=text>Company</a></th>
                     <th><a href="Sort" data-tsort-type=text>Publication</a></th>
                     <th><a href="Sort" data-tsort-type=text>Date</a></th>
