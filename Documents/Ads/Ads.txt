@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IBM 1620 Ads</title>
+<!--
+/***********************************************************************
+* IBM1620.org/Documents/Ads/Ads.html
+************************************************************************
+* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
+* Licensed under the MIT License, see
+*       http://www.opensource.org/licenses/mit-license.php
+************************************************************************
+* IBM 1620 Archive Documents Ads section page.
+************************************************************************
+* 2025-10-15  D.Babcock
+*   Initial version.
+* For later revisions, see the IBM1620-Archive github repository.
+***********************************************************************/
+-->
+<meta name="Author" content="Paul Kimpel & Dave Babcock">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link id=defaultStyleSheet rel=stylesheet type="text/css" href="../../Common/Common.css">
+
+<script type=module src="./Ads.js"></script>
+</head>
+
+<body>
+
+<div id=SectionHeader>
+    <div id=SectionSite>
+        <a href="../../Home.html" title="Return to the home page">IBM 1620 ARCHIVE</a>
+    </div>
+    <div id=SectionTitle>Documents</div>
+    <div id=SectionSelector alt="Navigation Menu"></div>
+</div>
+
+<div id=SectionBody>
+
+    <div id=BodyTitle>IBM 1620 Ads</div>
+
+    <div id=BodyText>
+
+        <p>This page contains published advertisements related to the IBM 1620.  To date, no ads have been found for the IBM 1710 or 1720.</p>
+
+        <p>The types of ads include:<br>
+           &nbsp; 1 - IBM ads for the 1620.<br>
+           &nbsp; 2 - Ads for companies selling software for the IBM 1620.<br>
+           &nbsp; 3 - Ads for companies selling peripherals for the IBM 1620.<br>
+           &nbsp; 4 - Competitor ads for other computers comparing themselves to the IBM 1620.<br>
+           &nbsp; 5 - Ads for books about the IBM 1620.<br>
+           &nbsp; 6 - Ads selling an IBM 1620.<br>
+           &nbsp; 7 - Miscellaneous ads related to the IBM 1620.</p>
+
+        <p>Here are the known ads:</p>
+    </div>
+
+    <div id=BodyTable>
+        <table id=AdsTable>
+            <thead class="sticky">
+                <tr>
+                    <th><a href="Sort" data-tsort-type=text>Title</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Type</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Company</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Publication</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Date</a></th>
+                </tr>
+            </thead>
+            <tbody class="altShading">
+<!-- Insert data table rows extracted from Ads.xlsm between these markers.  -->
+<!-- Insert data table rows extracted from Ads.xlsm between these markers.  -->
+            <tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
