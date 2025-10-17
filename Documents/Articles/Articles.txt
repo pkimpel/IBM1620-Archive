@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IBM 1620 Articles</title>
+<!--
+/***********************************************************************
+* IBM1620.org/Documents/Articles/Articles.html
+************************************************************************
+* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
+* Licensed under the MIT License, see
+*       http://www.opensource.org/licenses/mit-license.php
+************************************************************************
+* IBM 1620 Archive Documents Articles section page.
+************************************************************************
+* 2025-10-17  D.Babcock
+*   Initial version.
+* For later revisions, see the IBM1620-Archive github repository.
+***********************************************************************/
+-->
+<meta name="Author" content="Paul Kimpel & Dave Babcock">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link id=defaultStyleSheet rel=stylesheet type="text/css" href="../../Common/Common.css">
+
+<script type=module src="./Articles.js"></script>
+</head>
+
+<body>
+
+<div id=SectionHeader>
+    <div id=SectionSite>
+        <a href="../../Home.html" title="Return to the home page">IBM 1620 ARCHIVE</a>
+    </div>
+    <div id=SectionTitle>Documents</div>
+    <div id=SectionSelector alt="Navigation Menu"></div>
+</div>
+
+<div id=SectionBody>
+
+    <div id=BodyTitle>IBM 1620 Articles</div>
+
+    <div id=BodyText>
+
+        <p>This section of the website contains published articles pertaining to the IBM 1620.</p>
+
+        <p>The types of articles include:<br>
+           &nbsp; 1 - Technical information about the IBM 1620.<br>
+           &nbsp; 2 - Descriptions of IBM 1620 usage.<br>
+           &nbsp; 3 - Historic information about the IBM 1620.<br>
+           &nbsp; 4 - Software written for the IBM 1620.<br>
+           &nbsp; 5 - Miscellaneous articles about the IBM 1620.</p>
+
+        <p>Here are the known articles:</p>
+    </div>
+
+    <div id=BodyTable>
+        <table id=ArticlesTable>
+            <thead class="sticky">
+                <tr>
+                    <th><a href="Sort" data-tsort-type=text>Title</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Author(s)</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Type</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Publication</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Date</a></th>
+                </tr>
+            </thead>
+            <tbody class="altShading">
+<!-- Insert data table rows extracted from Articles.xlsm between these markers.  -->
+<!-- Insert data table rows extracted from Articles.xlsm between these markers.  -->
+            <tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
