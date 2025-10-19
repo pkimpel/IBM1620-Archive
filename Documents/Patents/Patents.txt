@@ -2,16 +2,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>IBM 1620 Miscellaneous</title>
+<title>IBM 1620 Patents</title>
 <!--
 /***********************************************************************
-* IBM1620.org/Documents/Miscellaneous/Miscellaneous.html
+* IBM1620.org/Documents/Patents/Patents.html
 ************************************************************************
 * Copyright (c) 2025, Paul Kimpel & Dave Babcock.
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
-* IBM 1620 Archive Documents Miscellaneous section page.
+* IBM 1620 Archive Documents Patents section page.
 ************************************************************************
 * 2025-10-15  D.Babcock
 *   Initial version.
@@ -23,7 +23,7 @@
 <meta http-equiv="Content-Style-Type" content="text/css">
 <link id=defaultStyleSheet rel=stylesheet type="text/css" href="../../Common/Common.css">
 
-<script type=module src="./Miscellaneous.js"></script>
+<script type=module src="./Patents.js"></script>
 </head>
 
 <body>
@@ -38,27 +38,28 @@
 
 <div id=SectionBody>
 
-    <div id=BodyTitle>IBM 1620 Miscellaneous Documents</div>
+    <div id=BodyTitle>IBM 1620 Patents</div>
 
     <div id=BodyText>
 
-        <p>This section contains documents related to the IBM 1620 that don't fall under one of the other categories.</p>
+        <p>This section of the website contains patents granted to IBM for the IBM 1620.</p>
 
-        <p>Here are the miscellaneous documents:</p>
+        <p>Here are the known patents:</p>
     </div>
 
     <div id=BodyTable>
-        <table id=MiscellaneousTable>
+        <table id=PatentsTable>
             <thead class="sticky">
                 <tr>
+                    <th class="center"><a href="Sort" data-tsort-type=text>Patent #</a></th>
                     <th><a href="Sort" data-tsort-type=text>Title</a></th>
-                    <th><a href="Sort" data-tsort-type=text>Author(s)</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Inventor(s)</a></th>
                     <th><a href="Sort" data-tsort-type=text>Date</a></th>
                 </tr>
             </thead>
             <tbody class="altShading">
-<!-- Insert data table rows extracted from Miscellaneous.xlsm between these markers.  -->
-<!-- Insert data table rows extracted from Miscellaneous.xlsm between these markers.  -->
+<!-- Insert data table rows extracted from Patents.xlsm between these markers.  -->
+<!-- Insert data table rows extracted from Patents.xlsm between these markers.  -->
             <tbody>
         </table>
     </div>
