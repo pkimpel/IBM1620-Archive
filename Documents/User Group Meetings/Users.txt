@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IBM 1620 User Group Meetings</title>
+<!--
+/***********************************************************************
+* IBM1620.org/Documents/Users/Users.html
+************************************************************************
+* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
+* Licensed under the MIT License, see
+*       http://www.opensource.org/licenses/mit-license.php
+************************************************************************
+* IBM 1620 Archive Documents Users section page.
+************************************************************************
+* 2025-10-20  D.Babcock
+*   Initial version.
+* For later revisions, see the IBM1620-Archive github repository.
+***********************************************************************/
+-->
+<meta name="Author" content="Paul Kimpel & Dave Babcock">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link id=defaultStyleSheet rel=stylesheet type="text/css" href="../../Common/Common.css">
+
+<script type=module src="./Users.js"></script>
+</head>
+
+<body>
+
+<div id=SectionHeader>
+    <div id=SectionSite>
+        <a href="../../Home.html" title="Return to the home page">IBM 1620 ARCHIVE</a>
+    </div>
+    <div id=SectionTitle>Documents</div>
+    <div id=SectionSelector alt="Navigation Menu"></div>
+</div>
+
+<div id=SectionBody>
+
+    <div id=BodyTitle>IBM 1620 User Group Meetings</div>
+
+    <div id=BodyText>
+
+        <p>This section of the website contains proceedings &amp; minutes from IBM 1620 User Group / COMMON meetings.</p>
+
+        <p>Here are the known User Group Meetings for the IBM 1620.
+    </div>
+
+    <div id=BodyTable>
+        <table id=UsersTable>
+            <thead class="sticky">
+                <tr>
+                    <th><a href="Sort" data-tsort-type=text>Meeting</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Location</a></th>
+                    <th><a href="Sort" data-tsort-type=text>Date</a></th>
+                </tr>
+            </thead>
+            <tbody class="altShading">
+<!-- Insert data table rows extracted from Users.xlsm between these markers.  -->
+<!-- Insert data table rows extracted from Users.xlsm between these markers.  -->
+            <tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
