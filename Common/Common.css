@@ -66,7 +66,7 @@ HTML {
     --ibm-blue:         #3576BA;        /* was 718DBD, supposed to be Pantone 116-16 U (#147599), but that's UGLY */
     --ibm-gray:         #4A4B4D;        /* was 555555, now Pantone 19-3906 TCX */
     --background-color: #F4F4F4;        /* off-white page background color */
-    --highlight-color:  #D3D3D3;        /* a light gray for highlighting */
+    --highlight-color:  #B3B3B3;        /* a light gray for highlighting */
     --alternate-color:  #D7E6F1}        /* a light blue for alternate table rows */
 
 BODY {
