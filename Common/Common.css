@@ -185,6 +185,10 @@ TABLE>TBODY>TR>TD {
     vertical-align:     top;
     border:             1px solid var(--ibm-gray)}
 
+TABLE>TBODY>TR.highlight {
+    font-weight:        bold;
+    background-color:   var(--alternate-color)}
+
 IMG.border {
     border:             1px solid black}
 

@@ -1,11 +1,11 @@
 /***********************************************************************
-* IBM1620.org/Documents/User Group Meetings/Users.js
+* IBM1620.org/Documents/Manuals/Manuals.js
 ************************************************************************
 * Copyright (c) 2025, Paul Kimpel & Dave Babcock.
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
-* IBM 1620 Archive Documents User Group Meetings page routines.
+* IBM 1620 Archive Documents Manuals page routines.
 ************************************************************************
 * 2025-10-20  D.Babcock
 *   Initial version.
@@ -19,6 +19,6 @@ window.addEventListener("load", function() {
     Section.buildMenu(Section.documentsPosition, 2);
 }, {once: true});
 
-for (const item of document.querySelectorAll("#UsersTable THEAD A")) {
+for (const item of document.querySelectorAll("#ManualsTable THEAD A")) {
     item.addEventListener("click", TableSort.sortAColumn);
 }

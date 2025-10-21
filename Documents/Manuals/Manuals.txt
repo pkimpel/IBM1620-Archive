@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IBM 1620 User Group Meetings</title>
+<!--
+/***********************************************************************
+* IBM1620.org/Documents/Manuals/Manuals.html
+************************************************************************
+* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
+* Licensed under the MIT License, see
+*       http://www.opensource.org/licenses/mit-license.php
+************************************************************************
+* IBM 1620 Archive Documents Manuals section page.
+************************************************************************
+* 2025-10-20  D.Babcock
+*   Initial version.
+* For later revisions, see the IBM1620-Archive github repository.
+***********************************************************************/
+-->
+<meta name="Author" content="Paul Kimpel & Dave Babcock">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link id=defaultStyleSheet rel=stylesheet type="text/css" href="../../Common/Common.css">
+
+<script type=module src="./Manuals.js"></script>
+</head>
+
+<body>
+
+<div id=SectionHeader>
+    <div id=SectionSite>
+        <a href="../../Home.html" title="Return to the home page">IBM 1620 ARCHIVE</a>
+    </div>
+    <div id=SectionTitle>Documents</div>
+    <div id=SectionSelector alt="Navigation Menu"></div>
+</div>
+
+<div id=SectionBody>
+
+    <div id=BodyTitle>IBM 1620 Manuals</div>
+
+    <div id=BodyText>
+
+        <p>This section of the website contains IBM's manuals for the IBM 1620.  129 different manuals are known, many of which had multiple versions and/or updates released.</p>
+
+        <p>Every IBM 1620 manual had a publication number of the form: <b><i>xxxx-yyyy-z</i></b><br>
+           &nbsp; &nbsp; where: <b><i>xxxx</i></b> - designated the type of manual and which group within IBM released it<br>
+                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b><i>yyyy</i></b> - was a unique 4-digit document number<br>
+                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b><i>z</i></b> - was the revision number of the document</p>
+
+        <p>It was common in the early days of the IBM 1620 that the first release of a manual would omit the "-z" revision number, assuming it to be "-0".  Later, first revisions explicitly used "-0".</p>
+
+        <p>Occassionally, different groups would release the same manual, but all of them used the same 4-digit document number.</p>
+
+        <p>Documents describing software were treated differently and are <a href="">here</a>.</p>
+
+        <p>Here is the list of known IBM 1620 manuals:</p>
+    </div>
+
+    <div id=BodyTable>
+        <table id=ManualsTable>
+            <thead class="sticky">
+                <tr>
+                    <th class="center">Doc #</th>
+                    <th colspan=5>Title</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Manual</th>
+                    <th>Update</th>
+                    <th>Update</th>
+                    <th>Update</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+<!-- Insert data table rows extracted from Manuals.xlsm between these markers.  -->
+<!-- Insert data table rows extracted from Manuals.xlsm between these markers.  -->
+            <tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
