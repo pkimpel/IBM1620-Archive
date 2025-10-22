@@ -158,30 +158,29 @@ BODY.deviceBody {
 TABLE {
     table-layout:       auto;
     width:              100%;
-    border-collapse:    collapse}
+    border:             1px solid var(--ibm-gray);
+    border-collapse:    separate;
+    border-spacing:     0}
 
-TABLE>THEAD>TR>TH {
-    padding-top:        4px;
-    padding-bottom:     4px;
-    padding-left:       4px;
-    padding-right:      4px;
-    vertical-align:     bottom;
-    background-color:   var(--highlight-color);
-    border:             1px solid var(--ibm-gray)}
+TABLE>THEAD {
+    border:             1px solid var(--ibm-gray);
+    background-color:   var(--highlight-color)}
 
-TABLE>THEAD.sticky>TR>TH {
+TABLE>THEAD.sticky {
     position:           sticky;
     top:                0;
     z-index:            1}
+
+TABLE>THEAD>TR>TH {
+    padding:            4px;
+    vertical-align:     bottom;
+    border:             1px solid var(--ibm-gray)}
 
 TABLE>TBODY.altShading>TR:nth-child(even) {
     background-color:   var(--alternate-color)}
 
 TABLE>TBODY>TR>TD {
-    padding-top:        4px;
-    padding-bottom:     4px;
-    padding-left:       4px;
-    padding-right:      4px;
+    padding:            4px;
     vertical-align:     top;
     border:             1px solid var(--ibm-gray)}
 
@@ -190,7 +189,7 @@ TABLE>TBODY>TR.highlight {
     background-color:   var(--alternate-color)}
 
 IMG.border {
-    border:             1px solid black}
+    border:             2px solid var(--ibm-gray)}
 
 IMG.wide {
     width:              99%}
