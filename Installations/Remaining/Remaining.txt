@@ -48,7 +48,7 @@
 
     </div>
 
-    <div id=BodyTable>
+    <div id=BodyTable class="full">
         <table id=RemainingTable>
             <thead class="sticky">
                 <tr>

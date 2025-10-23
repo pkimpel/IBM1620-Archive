@@ -19,11 +19,11 @@ BODY {
     margin:             4px;
     padding:            0;
     --heading-height:     4vmin;
-    --body-title-height:  4vmin;
-    --body-header-height: 3vmin;
-    --body-space-height:  3vmin;
-    --body-text-height:   2.5vmin;
-    --body-table-height:  2vmin}
+    --body-title-height:  3.5vmin;
+    --body-header-height: 2.5vmin;
+    --body-space-height:  2.5vmin;
+    --body-text-height:   2.0vmin;
+    --body-table-height:  1.75vmin}
 
 #SectionHeader {
     position:           absolute;
@@ -109,7 +109,8 @@ BODY {
     overflow:           auto}
 
 #BodyTitle {
-    position:           static;
+    position:           relative;
+    top:                0.5vmin;
     color:              black;
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          var(--body-title-height);
@@ -118,7 +119,10 @@ BODY {
     text-align:         center}
 
 #BodyHeader {
-    position:           static;
+    position:           relative;
+    left:               50%;
+    max-width:          70ch;
+    transform:          translate(-50%);
     color:              black;
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          var(--body-header-height);
@@ -127,11 +131,14 @@ BODY {
     text-align:         left}
 
 #BodySpace {
-    position:           static;
+    position:           relative;
     height:             var(--body-space-height)}
 
 #BodyText {
-    position:           static;
+    position:           relative;
+    left:               50%;
+    max-width:          70ch;
+    transform:          translate(-50%);
     color:              black;
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          var(--body-text-height);
@@ -139,10 +146,35 @@ BODY {
     text-align:         left}
 
 #BodyImage {
-    position:           static}
+    position:           relative;
+    left:               50%;
+    max-width:          70ch;
+    transform:          translate(-50%)}
+
+#BodyImage.full {
+    position:           relative;
+    left:               0%;
+    width:              100%;
+    max-width:          100%;
+    transform:          none}
 
 #BodyTable {
-    position:           static;
+    position:           relative;
+    left:               50%;
+    max-width:          70ch;
+    transform:          translate(-50%);
+    color:              black;
+    font-family:        DejaVuSansWeb, sans-serif;
+    font-size:          var(--body-table-height);
+    font-weight:        normal;
+    text-align:         left}
+
+#BodyTable.full {
+    position:           relative;
+    left:               0;
+    width:              100%;
+    max-width:          100%;
+    transform:          none;
     color:              black;
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          var(--body-table-height);
