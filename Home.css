@@ -27,6 +27,7 @@ BODY {
     padding:            0;
     --heading-height:   25vmin;
     --footer-height:    7vmin;
+    --email-height:     10vmin;
     --sys-image-height: 25vmin;
     --sys-image-aspect: 1.19;
     --selector-height:  30vmin}
@@ -125,6 +126,20 @@ BODY {
     background-image:   radial-gradient(circle, #DDDDDD, #CCCCCC 40%, #999999 80%, #666666 90%);
     border-radius:      50%;
     box-shadow:         inset 3.75vmin 3.75vmin 7.5vmin #444444}
+
+#EmailDiv {
+    position:           absolute;
+    bottom:             var(--footer-height);
+    height:             var(--email-height);
+    width:              100%}
+#WriteUs {
+    position:           absolute;
+    bottom:             50%;
+    right:              0.8vmin;
+    width:              10vmin;
+    max-width:          16%;
+    max-height:         100%;
+    transform:          translate(0, 50%)}
 
 #HomeFooter {
     position:           absolute;

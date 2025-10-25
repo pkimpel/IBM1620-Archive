@@ -151,12 +151,12 @@ BODY {
     max-width:          70ch;
     transform:          translate(-50%)}
 
-#BodyImage.full {
+#BodyImage.wide {
     position:           relative;
-    left:               0%;
+    left:               50%;
     width:              100%;
     max-width:          100%;
-    transform:          none}
+    transform:          translate(-50%)}
 
 #BodyTable {
     position:           relative;
@@ -169,12 +169,12 @@ BODY {
     font-weight:        normal;
     text-align:         left}
 
-#BodyTable.full {
+#BodyTable.wide {
     position:           relative;
-    left:               0;
+    left:               50%;
     width:              100%;
     max-width:          100%;
-    transform:          none;
+    transform:          translate(-50%);
     color:              black;
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          var(--body-table-height);
