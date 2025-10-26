@@ -194,6 +194,9 @@ IMG.border {
 IMG.full {
     width:              99%}
 
+IMG.thumbnail {
+    height:             4vmin}
+
 a {
     color:              var(--ibm-blue);
     text-decoration:    underline}
