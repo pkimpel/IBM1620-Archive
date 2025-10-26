@@ -123,7 +123,7 @@ BODY {
     overflow:           hidden;
 /*    cursor:             grab;  /* For when you can grab and turn the selector knob */
     border:             3px solid silver;
-    background-image:   radial-gradient(circle, #DDDDDD, #CCCCCC 40%, #999999 80%, #666666 90%);
+    background-image:   radial-gradient(circle, #dddddd, #cccccc 40%, #999999 80%, #666666 90%);
     border-radius:      50%;
     box-shadow:         inset 3.75vmin 3.75vmin 7.5vmin #444444}
 
@@ -178,7 +178,7 @@ BODY {
 #ZoomImageModal {
     background-color:   rgba(0, 0, 0, 0.8)}
 #ZoomImageClose {
-    color:              #000CCC}
+    color:              #000ccc}
 #ZoomImageClose:hover,
 #ZoomImageClose:focus {
     color:              red;

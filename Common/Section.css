@@ -16,6 +16,7 @@ BODY {
     cursor:             default;
     position:           relative;
     height:             calc(100% - 8px);
+    background-color:   var(--background-color);
     margin:             4px;
     padding:            0;
     --heading-height:     4vmin;
@@ -81,7 +82,7 @@ BODY {
     display:            none;
     top:                var(--heading-height);
     right:              0;
-    background-color:   #F1F1F1;
+    background-color:   #f1f1f1;
     width:              max-content;
     box-shadow:         0px 8px 16px 0px var(--ibm-gray);
     z-index:            2}
