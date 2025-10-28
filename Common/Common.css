@@ -157,7 +157,7 @@ BODY.deviceBody {
 
 TABLE {
     table-layout:       auto;
-    width:              100%;
+    width:              99%;
     border:             1px solid var(--ibm-gray);
     border-collapse:    separate;
     border-spacing:     0}
@@ -191,7 +191,11 @@ TABLE>TBODY>TR.highlight {
 IMG.border {
     border:             2px solid var(--ibm-gray)}
 
-IMG.full {
+IMG.fit {
+    width:              99%;
+    object-fit:         contain}
+
+IMG.max {
     width:              99%}
 
 IMG.thumbnail {

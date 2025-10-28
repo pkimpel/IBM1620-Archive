@@ -58,15 +58,15 @@
 
     </div>
 
-    <div id=BodyImage class="full">
-        <img class="border wide" src="./Installations.png" alt="Map of installations">
+    <div id=BodyImage class="wide">
+        <img class="border max" src="./Installations.png" alt="Map of installations">
     </div>
 
     <div id=BodyText>
         <p>Here is the list of the known installations:</p>
     </div>
 
-    <div id=BodyTable class="full">
+    <div id=BodyTable class="wide">
         <table id=InstallationTable>
             <thead class="sticky">
                 <tr>

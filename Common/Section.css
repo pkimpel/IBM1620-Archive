@@ -149,7 +149,7 @@ BODY {
 #BodyImage {
     position:           relative;
     left:               50%;
-    max-width:          70ch;
+    max-width:          60%;
     transform:          translate(-50%)}
 
 #BodyImage.wide {
@@ -162,7 +162,7 @@ BODY {
 #BodyTable {
     position:           relative;
     left:               50%;
-    max-width:          70ch;
+    max-width:          70%;
     transform:          translate(-50%);
     color:              black;
     font-family:        DejaVuSansWeb, sans-serif;
