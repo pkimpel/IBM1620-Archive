@@ -121,25 +121,16 @@ BODY {
     left:               0;
     right:              0;
     overflow:           hidden;
-/*    cursor:             grab;  /* For when you can grab and turn the selector knob */
     border:             3px solid silver;
     background-image:   radial-gradient(circle, #dddddd, #cccccc 40%, #999999 80%, #666666 90%);
     border-radius:      50%;
     box-shadow:         inset 3.75vmin 3.75vmin 7.5vmin #444444}
 
-#EmailDiv {
-    position:           absolute;
-    bottom:             var(--footer-height);
-    height:             var(--email-height);
-    width:              100%}
 #WriteUs {
     position:           absolute;
-    bottom:             50%;
+    bottom:             var(--footer-height);
     right:              0.8vmin;
-    width:              10vmin;
-    max-width:          16%;
-    max-height:         100%;
-    transform:          translate(0, 50%)}
+    height:             var(--email-height)}
 
 #HomeFooter {
     position:           absolute;

@@ -37,7 +37,8 @@
 <script type=module src="./Home.js"></script>
 </head>
 
-<body>
+<body id=HomePage>
+
 <div id=HomeHeader>
     <div id=HomeTitleBox>
         <div id=HomeTitle>THE IBM 1620 SYSTEM ARCHIVE</div>
@@ -48,8 +49,10 @@
     </div>
 
     </div>
-        <img id=HomeSystemImage src="./Images/IBM_1620_system.png" alt="IBM 1620 Computer System"
-             title="Click to zoom; click again to collapse">
+
+    <img id=HomeSystemImage src="./Images/IBM_1620_system.png" alt="IBM 1620 Computer System"
+         title="Click to zoom; click again to collapse">
+
     <div id=HomeSystemCaption>The IBM 1620 was IBM's low-end scientific computer in the early 1960s.</div>
 </div>
 
@@ -57,9 +60,7 @@
     <div id=SelectorSwitchDiv></div>
 </div>
 
-<div id=EmailDiv>
-    <a href="mailto:feedback@ibm1620.org?subject=[IBM 1620] Website feedback"><img id=WriteUs src="./Images/Write_Us.png" alt="Write Us icon"></a>
-</div>
+<a href="mailto:feedback@ibm1620.org?subject=[IBM 1620] Website feedback"><img id=WriteUs src="./Images/Write_Us.png" alt="Write Us icon"></a>
 
 <div id=HomeFooter>
     <a href=https://www.computerhistory.org><img id=CHMLogo src="./Images/CHM_logo.png" alt="Computer History Museum Logo"></a>
@@ -76,4 +77,5 @@
 </div>
 
 </body>
+
 </html>
