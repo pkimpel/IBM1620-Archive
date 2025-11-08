@@ -50,9 +50,12 @@ class SelectorSwitch {
         this.position = 0;              // current knob position
         this.positions = [];            // knob position angles
 
-        this.boundStep = this.step.bind(this);
         this.boundCaptionClick = this.captionClick.bind(this);
         this.changeListener = null;     // listener function to report knob changes -- only one allowed
+
+        this.boundSelectorGrab = this.selectorGrab.bind(this);
+        this.boundSelectorMove = this.selectorMove.bind(this);
+        this.boundSelectorRelease = this.selectorRelease.bind(this);
 
         // Visible DOM element.
         this.size = parent.clientWidth;
@@ -68,6 +71,13 @@ class SelectorSwitch {
         this.canvas.width = this.cupSize;
         this.canvas.className = SelectorSwitch.className;
         this.element.appendChild(this.canvas);
+
+        let rect = parent.getBoundingClientRect();
+        this.selectorRadius = rect.width / 2;                      // radius of selector knob
+        this.selectorOriginX = rect.left + this.selectorRadius;    // X offset of center of selector knob
+        this.selectorOriginY = rect.top + this.selectorRadius;     // Y offset of center of selector knob
+        this.selectorGrabbed = false;                              // selector knob is currently grabbed
+        this.selectorTimerId = 0;                                  // id of nextStep() timer
 
         // Build the captions.
         let offset = Math.round(this.size/2);
@@ -110,14 +120,17 @@ class SelectorSwitch {
             caption.addEventListener("click", this.boundCaptionClick, false);
         }
 
+        parent.addEventListener("pointerdown", this.boundSelectorGrab, false);
+        parent.addEventListener("pointermove", this.boundSelectorMove, false);
+        document.getElementById("HomePage").addEventListener("pointerup", this.boundSelectorRelease, false);
+
         this.set(initial);              // set to its initial position
-        //this.canvas.addEventListener("click", this.boundStep, false);
     }
 
     /**************************************/
     dispose() {
         /* Deallocates all elements of the selector switch and unwrires all of
-        its events */
+           its events */
 
         this.changeListener = null;
         while (this.parent.lastChild) {
@@ -135,10 +148,10 @@ class SelectorSwitch {
     /**************************************/
     setChangeListener(listener) {
         /* Sets an event handler whenever the knob position is changed. Note
-        that this is not a JavaScript event mechanism. It only sets a call-back
-        function, and only one function at a time is supported. When the knob
-        position is changed and has reached its destination, the listener will
-        be called with the new 0-relative position as its only parameter */
+           that this is not a JavaScript event mechanism. It only sets a call-back
+           function, and only one function at a time is supported. When the knob
+           position is changed and has reached its destination, the listener will
+           be called with the new 0-relative position as its only parameter */
 
         this.changeListener = listener;
     }
@@ -153,7 +166,8 @@ class SelectorSwitch {
     /**************************************/
     set(position) {
         /* Changes the visible state of the knob according to the position index
-        and sets this.position to the new position */
+           and sets this.position to the new position */
+
         let dc = this.canvas.getContext("2d");
         let posTop = this.positions.length - 1;
         let radius = Math.round(this.cupSize/2);
@@ -223,68 +237,38 @@ class SelectorSwitch {
     }
 
     /**************************************/
-    step(ev) {
-        /* Event handler for clicks within the "cup" (this.canvas). Steps the
-        tip of the knob to its next position in the direction of the click. If
-        it is at the last position, steps it to the first position, and vice
-        versa. This approach was suggested by Dave Babcock */
-        let rect = this.canvas.getBoundingClientRect();
-
-        // Get the click coordinates and transform to "cup" coordinates.
-        let x = ev.clientX - rect.left - rect.width/2;
-        let y = ev.clientY - rect.top  - rect.height/2;
-        let hypotenuse = Math.sqrt(x*x + y*y);
-
-        if (hypotenuse > 0) {           // if it's at dead center, we can't do anything
-            // Compute the radial angle of the click point and adjust for its quadrant.
-            let angle = Math.asin(x/hypotenuse);
-            if (y > 0) {
-                angle = Math.PI - angle;
-            } else if (x < 0) {
-                angle = Math.PI*2 + angle;
-            }
-
-            // Compute the angle between click and knob tip, check for origin crossover.
-            let knobAngle = Math.PI - this.positions[this.position];
-            let delta = angle - knobAngle;
-            if (Math.abs(delta) > Math.PI) {
-                delta = -delta;
-            }
-
-            this.set(this.position + Math.sign(delta));
-            if (this.changeListener) {
-                this.changeListener(this.position);
-            }
-        }
-    }
-
-    /**************************************/
-    moveTo(position) {
+    moveTo(position, go) {
         /* Steps the knob to the specified position */
+
         let steps = position - this.position;
         let dir = Math.sign(steps);
 
         const nextStep = () => {
-            this.set(this.position+dir);
+            clearTimeout(this.selectorTimerId);    // make sure that only the most recent pending move is done
+            this.selectorTimerId = 0;
             if (this.position != position) {
-                setTimeout(nextStep, 100);
-             } else {
-                this?.changeListener(this.position);
+                this.set(this.position + dir);
+                this.selectorTimerId = setTimeout(nextStep, 100);
+            } else if (go) {
+                this?.changeListener(this.position);    // Go to selected website section
             }
         };
 
         if (steps) {
-            if (Math.abs(steps) > this.positions.length/2) {
+            if (Math.abs(steps) > (this.positions.length / 2)) {
                 dir = -dir;
             }
             nextStep();
+        } else if (go) {
+            this?.changeListener(this.position);    // Go to selected website section
         }
     }
 
     /**************************************/
     captionClick(ev) {
         /* Handles a click event on one of the position captions to move the
-        knob to the position of that caption */
+           knob to the position of that caption */
+
         let e = ev.target;
 
         while (e.tagName != "BUTTON") {
@@ -301,11 +285,84 @@ class SelectorSwitch {
                     if (this.position == position) {
                         this?.changeListener(this.position);
                     } else {
-                        this.moveTo(position);
+                        this.moveTo(position, true);
                     }
                 }
             }
         }
+    }
+
+    /**************************************/
+    withinSelector(ev) {
+        /* Returns true if pointer is within selector cup */
+
+        let x = ev.clientX - this.selectorOriginX;
+        let y = ev.clientY - this.selectorOriginY;
+        let dist = Math.sqrt(x * x + y * y);
+
+        return (dist <= this.selectorRadius);
+    }
+
+    /**************************************/
+    selectorPosition(ev) {
+        /* Returns the current position of the pointer */
+
+        let x = ev.clientX - this.selectorOriginX;
+        let y = ev.clientY - this.selectorOriginY;
+        let angle = Math.atan2(y, x) / SelectorSwitch.degrees;
+        let position = (Math.floor((angle + 360) / 30) + 4) % 12;
+
+        return position;
+    }
+
+    /**************************************/
+    selectorGrab(ev) {
+        /* Handles selector knob being grabbed and rotate knob to matching angle */
+
+        if (!this.withinSelector(ev)) return;
+
+        this.selectorGrabbed = true;
+        this.parent.style.cursor = "grabbing";
+
+        this.moveTo(this.selectorPosition(ev), false);
+    }
+
+    /**************************************/
+    selectorMove(ev) {
+        /* Handles selector knob being turned and rotate knob to new angle */
+
+        if (!this.withinSelector(ev)) {
+            this.parent.style.cursor = "default";
+            return;
+        } else {
+            if (!this.selectorGrabbed) {
+                this.parent.style.cursor = "grab";
+                return;
+            } else {
+                this.parent.style.cursor = "grabbing";
+            }
+        }
+
+        this.moveTo(this.selectorPosition(ev), false);
+    }
+
+    /**************************************/
+    selectorRelease(ev) {
+        /* Handles selector knob being released, rotate knob to final position,
+           then go to selected section */
+
+        if (!this.withinSelector(ev)) {
+            this.selectorGrabbed = false;
+            this.parent.style.cursor = "default";
+            return;
+        } else {
+            this.parent.style.cursor = "grab";
+            if (!this.selectorGrabbed) return;
+        }
+
+        this.selectorGrabbed = false;
+
+        this.moveTo(this.position, true);
     }
 
 } // class SelectorSwitch
