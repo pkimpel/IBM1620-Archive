@@ -77,7 +77,7 @@ class SelectorSwitch {
         this.selectorOriginX = rect.left + this.selectorRadius;    // X offset of center of selector knob
         this.selectorOriginY = rect.top + this.selectorRadius;     // Y offset of center of selector knob
         this.selectorGrabbed = false;                              // selector knob is currently grabbed
-        this.selectorTimerId = 0;                                  // id of nextStep() timer
+        this.selectorMoveId = 0;                                   // move id number used to control nextStep()
 
         // Build the captions.
         let offset = Math.round(this.size/2);
@@ -240,15 +240,15 @@ class SelectorSwitch {
     moveTo(position, go) {
         /* Steps the knob to the specified position */
 
+        let moveId = ++this.selectorMoveId;
         let steps = position - this.position;
         let dir = Math.sign(steps);
 
         const nextStep = () => {
-            clearTimeout(this.selectorTimerId);    // make sure that only the most recent pending move is done
-            this.selectorTimerId = 0;
-            if (this.position != position) {
+            if (moveId != this.selectorMoveId) return;    // make sure that only the most recent pending move is done
+            if (position != this.position) {
                 this.set(this.position + dir);
-                this.selectorTimerId = setTimeout(nextStep, 100);
+                setTimeout(nextStep, 100);
             } else if (go) {
                 this?.changeListener(this.position);    // Go to selected website section
             }
@@ -362,7 +362,7 @@ class SelectorSwitch {
 
         this.selectorGrabbed = false;
 
-        this.moveTo(this.position, true);
+        this.moveTo(this.selectorPosition(ev), true);
     }
 
 } // class SelectorSwitch
