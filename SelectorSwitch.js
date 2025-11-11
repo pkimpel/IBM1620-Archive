@@ -120,8 +120,8 @@ class SelectorSwitch {
             caption.addEventListener("click", this.boundCaptionClick, false);
         }
 
-        parent.addEventListener("pointerdown", this.boundSelectorGrab, false);
-        parent.addEventListener("pointermove", this.boundSelectorMove, false);
+        document.getElementById("SelectorSwitchDiv").addEventListener("pointerdown", this.boundSelectorGrab, false);
+        document.getElementById("SelectorSwitchDiv").addEventListener("pointermove", this.boundSelectorMove, false);
         document.getElementById("HomePage").addEventListener("pointerup", this.boundSelectorRelease, false);
 
         this.set(initial);              // set to its initial position

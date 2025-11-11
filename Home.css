@@ -25,6 +25,7 @@ BODY {
     background-color:   var(--background-color);
     margin:             4px;
     padding:            0;
+    overflow:           hidden;
     --heading-height:   25vmin;
     --footer-height:    7vmin;
     --email-height:     10vmin;
@@ -96,7 +97,16 @@ BODY {
     left:               50%;
     width:              var(--selector-height);
     height:             var(--selector-height);
-    transform:          translate(-50%, 0)}
+    transform:          translate(-50%, 0);
+    touch-action:       none;
+    touch-callout:      none;
+    user-select:        none;
+                                  /* Address problems with specific mobile devices */
+    -webkit-touch-callout: none;  /* iOS Safari long presses */
+    -webkit-user-select:   none;  /* Safari, Chrome, Silk */
+    -khtml-user-select:    none;  /* Konqueror */
+    -moz-user-select:      none;  /* Firefox */
+    -ms-user-select:       none}  /* IE, Edge */
 #SelectorSwitchDiv .SelectorSwitchCaption {
     position:           absolute;
     height:             2em;
