@@ -12,19 +12,25 @@
 * For later revisions, see the IBM1620-Archive github repository.
 ***********************************************************************/
 
+HTML {
+    width:              100%;
+    min-width:          500px}
+
 BODY {
-    cursor:             default;
-    position:           relative;
-    height:             calc(100% - 8px);
-    background-color:   var(--background-color);
-    margin:             4px;
-    padding:            0;
-    --heading-height:     4vmin;
-    --body-title-height:  3.5vmin;
-    --body-header-height: 2.5vmin;
-    --body-space-height:  2.5vmin;
-    --body-text-height:   2.0vmin;
-    --body-table-height:  1.75vmin}
+    cursor:                default;
+    position:              relative;
+    height:                calc(100% - 8px);
+    width:                 calc(100% - 16px);
+    background-color:      var(--background-color);
+    margin:                4px;
+    padding:               0;
+    --heading-height:      2.4vw;
+    --body-title-height:   2.2vw;
+    --body-header-height:  1.6vw;
+    --body-space-height:   1.6vw;
+    --body-text-height:    1.4vw;
+    --body-table-height:   1.4vw;
+    --body-caption-height: 1.4vw}
 
 #SectionHeader {
     position:           absolute;
@@ -32,7 +38,8 @@ BODY {
     left:               8px;
     right:              8px;
     height:             var(--heading-height);
-    border-bottom:      4px solid var(--ibm-blue)}
+    border-bottom:      4px solid var(--ibm-blue);
+    z-index:            2}
 #SectionSite {
     position:           absolute;
     top:                0;
@@ -48,17 +55,16 @@ BODY {
 #SectionTitle {
     position:           absolute;
     top:                0;
-    right:              7vmin;
+    right:              4vw;
     color:              black;
     line-height:        1;
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          var(--heading-height);
     font-weight:        bold;
     text-align:         right}
-
 #SectionSelector {
     position:           absolute;
-    right:              1%;
+    right:              0.5vw;
     height:             var(--heading-height);
     width:              var(--heading-height)}
 
@@ -92,7 +98,7 @@ BODY {
     display:            block;
     color:              var(--ibm-blue);
     background-color:   white;
-    font-size:          3vmin;
+    font-size:          1.9vw;
     font-weight:        bold;
     text-decoration:    none;
     overflow:           auto;
@@ -106,12 +112,12 @@ BODY {
     top:                var(--heading-height);
     left:               8px;
     right:              8px;
-    height:             calc(100% - (var(--heading-height) + 1vmin + 8px));
+    height:             calc(100% - (var(--heading-height) + .6vw + 8px));
     overflow:           auto}
 
 #BodyTitle {
     position:           relative;
-    top:                0.5vmin;
+    top:                0.3vw;
     color:              black;
     font-family:        DejaVuSansWeb, sans-serif;
     font-size:          var(--body-title-height);
@@ -138,7 +144,7 @@ BODY {
 #BodyText {
     position:           relative;
     left:               50%;
-    max-width:          70ch;
+    max-width:          75ch;
     transform:          translate(-50%);
     color:              black;
     font-family:        DejaVuSansWeb, sans-serif;
@@ -181,3 +187,25 @@ BODY {
     font-size:          var(--body-table-height);
     font-weight:        normal;
     text-align:         left}
+
+#BodyPhotoGallery {
+    position:              relative;
+    width:                 100%;
+    justify-content:       center;
+    display:               grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    align-items:           end;
+    grid-gap:              10px;
+    color:                 black;
+    font-family:           DejaVuSansWeb, sans-serif;
+    font-size:             var(--body-caption-height);
+    font-weight:           normal;
+    text-align:            center}
+
+#BodyPhotoGallery A {
+    color:              black;
+    text-decoration:    none}
+
+#BodyGalleryItem {
+    padding:            5px;
+    border:             2px solid var(--ibm-blue)}
