@@ -24,13 +24,13 @@ BODY {
     background-color:      var(--background-color);
     margin:                4px;
     padding:               0;
-    --heading-height:      2.4vw;
-    --body-title-height:   2.2vw;
-    --body-header-height:  1.6vw;
-    --body-space-height:   1.6vw;
-    --body-text-height:    1.4vw;
-    --body-table-height:   1.4vw;
-    --body-caption-height: 1.4vw}
+    --heading-height:      max(2.4vw, 24px);
+    --body-title-height:   max(2.2vw, 22px);
+    --body-header-height:  max(1.6vw, 16px);
+    --body-space-height:   max(1.6vw, 16px);
+    --body-text-height:    max(1.4vw, 14px);
+    --body-table-height:   max(1.4vw, 14px);
+    --body-caption-height: max(1.4vw, 14px)}
 
 #SectionHeader {
     position:           absolute;
@@ -55,7 +55,7 @@ BODY {
 #SectionTitle {
     position:           absolute;
     top:                0;
-    right:              4vw;
+    right:              max(3.6vw, 36px);
     color:              black;
     line-height:        1;
     font-family:        DejaVuSansWeb, sans-serif;
