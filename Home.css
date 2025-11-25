@@ -184,7 +184,7 @@ BODY {
 #ZoomImageModal {
     background-color:   rgba(0, 0, 0, 0.8)}
 #ZoomImageClose {
-    color:              #000ccc}
+    color:              white}
 #ZoomImageClose:hover,
 #ZoomImageClose:focus {
     color:              red;
@@ -192,6 +192,7 @@ BODY {
     cursor:             pointer}
 #ZoomImage {
     position:           absolute;
+    cursor:             zoom-out;
     top:                50%;
     left:               50%;
     transform:          translate(-50%, -50%);

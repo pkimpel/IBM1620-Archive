@@ -158,7 +158,6 @@ const globalLoad = (ev) => {
 
         $$("HomeSystemImage").addEventListener("click", zoomImageOpen);
         $$("ZoomImage").addEventListener("click", zoomImageClose);
-        $$("ZoomImageModal").addEventListener("click", zoomImageClose);
         $$("ZoomImageClose").addEventListener("click", zoomImageClose);
     }
 } // globalLoad
