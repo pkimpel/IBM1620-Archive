@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IBM 1625 Photos</title>
+<!--
+/***********************************************************************
+* IBM1620.org/Photos/IBM 1625/IBM 1625.html
+************************************************************************
+* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
+* Licensed under the MIT License, see
+*       http://www.opensource.org/licenses/mit-license.php
+************************************************************************
+* IBM 1620 Archive Photos IBM 1625 section page.
+************************************************************************
+* 2025-11-18  D.Babcock
+*   Initial version.
+* For later revisions, see the IBM1620-Archive github repository.
+***********************************************************************/
+-->
+<meta name="Author" content="Paul Kimpel & Dave Babcock">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link id=defaultStyleSheet rel=stylesheet type="text/css" href="../../Common/Common.css">
+
+<script type=module src="./IBM 1625.js"></script>
+</head>
+
+<body>
+
+<div id=SectionHeader>
+    <div id=SectionSite>
+        <a href="../../Home.html" title="Return to the home page">IBM 1620 ARCHIVE</a>
+    </div>
+    <div id=SectionTitle>Photos</div>
+    <div id=SectionSelector alt="Navigation Menu"></div>
+</div>
+
+<div id=SectionBody>
+
+    <div id=BodyTitle>IBM 1625 Photos</div>
+
+    <div id=BodyText>
+
+        <p>This area of the website contains photos of the IBM 1625 Core Storage.</p>
+
+    </div>
+
+    <div id=BodyPhotoGallery>
+
+<!-- Insert data table rows extracted from IBM 1625.xlsm between these markers.  -->
+<!-- Insert data table rows extracted from IBM 1625.xlsm between these markers.  -->
+
+    </div>
+
+</div>
+
+<div id=ZoomImageModal class=modal>
+    <span id=ZoomImageClose class=closeIcon
+          title="Click to close the zoomed image">&times;</span>
+    <img id=ZoomImage src="" alt="Zoomed image"
+         title="Zoomed image – click to close">
+</div>
+
+</body>
+</html>
