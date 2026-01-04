@@ -1,7 +1,7 @@
 /***********************************************************************
 * IBM-1620/Archive SelectorSwitch.js
 ************************************************************************
-* Copyright (c) 2025, Paul Kimpel.
+* Copyright (c) 2025-2026, Paul Kimpel.
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************

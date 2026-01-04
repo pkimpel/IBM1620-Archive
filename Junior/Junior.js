@@ -1,7 +1,7 @@
 /***********************************************************************
 * IBM1620.org/Junior/Junior.js
 ************************************************************************
-* Copyright (c) 2025, Paul Kimpel & Dave Babcock.
+* Copyright (c) 2025-2026, Paul Kimpel & Dave Babcock.
 * Licensed under the MIT License, see
 *       http://www.opensource.org/licenses/mit-license.php
 ************************************************************************
