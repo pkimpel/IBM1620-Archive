@@ -67,7 +67,8 @@ HTML {
     --ibm-gray:         #4a4b4d;        /* was 555555, now Pantone 19-3906 TCX */
     --background-color: #f4f4f4;        /* off-white page background color */
     --highlight-color:  #b3b3b3;        /* a light gray for highlighting */
-    --alternate-color:  #d7e6f1}        /* a light blue for alternate table rows */
+    --alternate-color:  #d7e6f1;        /* a light blue for alternate table rows */
+    --image-background: #d7e6f1}        /* a light blue for image backgrounds */
 
 BODY {
     font-family:        DejaVuSansWeb, sans-serif;
@@ -190,6 +191,13 @@ TABLE>TBODY>TR.highlight {
 
 IMG.border {
     border:             2px solid var(--ibm-gray)}
+
+IMG.background {
+    background-color:   var(--image-background)}
+
+IMG.center {
+    display:            block;
+    margin:             0 auto}
 
 IMG.fit {
     width:              99%;

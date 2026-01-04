@@ -152,6 +152,32 @@ BODY {
     font-weight:        normal;
     text-align:         left}
 
+#BodyIndentedText {
+    position:           relative;
+    left:               50%;
+    max-width:          70ch;
+    transform:          translate(-50%);
+    color:              black;
+    font-family:        DejaVuSansWeb, sans-serif;
+    font-size:          var(--body-text-height);
+    font-weight:        normal;
+    text-align:         left}
+
+#BodyBulletList {
+    margin-left:         1ch;
+    list-style-type:     disc;
+    list-style-position: outside}
+
+#BodyNumberList {
+    margin-left:         1ch;
+    list-style-type:     decimal;
+    list-style-position: outside}
+
+#BodyAlphaList {
+    margin-left:         1ch;
+    list-style-type:     lower-alpha;
+    list-style-position: outside}
+
 #BodyImage {
     position:           relative;
     left:               50%;
@@ -204,6 +230,7 @@ BODY {
     text-decoration:       none}
 #BodyGalleryItem {
     padding:               5px;
+    background-color:      var(--image-background);
     border:                2px solid black}
 #BodyGalleryItem.zoom {
     cursor:                zoom-in}
