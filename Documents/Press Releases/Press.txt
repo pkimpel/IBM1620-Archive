@@ -44,7 +44,6 @@
 
         <p>This section of the website contains press releases related to the IBM 1620.</p>
 
-        <p>Here are the known press releases:</p>
     </div>
 
     <div id=BodyTable>

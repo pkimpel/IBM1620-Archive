@@ -44,7 +44,6 @@
 
         <p>This section of the website contains various specification files related to the IBM 1620.</p>
 
-        <p>Here are the known specification files of the IBM 1620.
     </div>
 
     <div id=BodyTable>

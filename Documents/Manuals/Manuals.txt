@@ -55,7 +55,6 @@
 
         <p>Documents describing software were treated differently and are <a href="">here</a>.</p>
 
-        <p>Here is the list of known IBM 1620 manuals:</p>
     </div>
 
     <div id=BodyTable>

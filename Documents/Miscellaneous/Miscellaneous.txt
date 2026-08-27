@@ -44,7 +44,6 @@
 
         <p>This section contains documents related to the IBM 1620 that don't fall under one of the other categories.</p>
 
-        <p>Here are the miscellaneous documents:</p>
     </div>
 
     <div id=BodyTable>

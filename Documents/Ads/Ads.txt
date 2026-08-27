@@ -44,16 +44,6 @@
 
         <p>This page contains published advertisements related to the IBM 1620.</p>
 
-        <p>The types of ads include:<br>
-           &nbsp; 1 - IBM ads for the 1620.<br>
-           &nbsp; 2 - Ads for companies selling software for the IBM 1620.<br>
-           &nbsp; 3 - Ads for companies selling peripherals for the IBM 1620.<br>
-           &nbsp; 4 - Competitor ads for other computers comparing themselves to the IBM 1620.<br>
-           &nbsp; 5 - Ads for books about the IBM 1620.<br>
-           &nbsp; 6 - Ads selling an IBM 1620.<br>
-           &nbsp; 7 - Miscellaneous ads related to the IBM 1620.</p>
-
-        <p>Here are the known ads:</p>
     </div>
 
     <div id=BodyTable>
@@ -61,7 +51,6 @@
             <thead class="sticky">
                 <tr>
                     <th><a href="Sort" data-tsort-type=text>Title</a></th>
-                    <th class="center"><a href="Sort" data-tsort-type=text>Type</a></th>
                     <th><a href="Sort" data-tsort-type=text>Company</a></th>
                     <th><a href="Sort" data-tsort-type=text>Publication</a></th>
                     <th><a href="Sort" data-tsort-type=text>Date</a></th>

@@ -44,15 +44,6 @@
 
         <p>This section of the website contains published articles pertaining to the IBM 1620.</p>
 
-        <p>The types of articles include:<br>
-           &nbsp; 1 - Technical information about the IBM 1620.<br>
-           &nbsp; 2 - Descriptions of IBM 1620 usage.<br>
-           &nbsp; 3 - Historic information about the IBM 1620.<br>
-           &nbsp; 4 - Software written for the IBM 1620.<br>
-           &nbsp; 5 - Hardware used with the IBM 1620.<br>
-           &nbsp; 6 - Miscellaneous articles about the IBM 1620.</p>
-
-        <p>Here are the known articles:</p>
     </div>
 
     <div id=BodyTable>
@@ -61,7 +52,6 @@
                 <tr>
                     <th><a href="Sort" data-tsort-type=text>Title</a></th>
                     <th><a href="Sort" data-tsort-type=text>Author(s)</a></th>
-                    <th><a href="Sort" data-tsort-type=text>Type</a></th>
                     <th><a href="Sort" data-tsort-type=text>Publication</a></th>
                     <th><a href="Sort" data-tsort-type=text>Date</a></th>
                 </tr>

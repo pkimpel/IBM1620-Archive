@@ -46,7 +46,6 @@
 
         <p>These include documents about the IBM 1620's hardware, software, and use.</p>
 
-        <p>Here are the known papers and reports:</p>
     </div>
 
     <div id=BodyTable>

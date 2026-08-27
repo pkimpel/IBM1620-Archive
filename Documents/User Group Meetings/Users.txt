@@ -44,7 +44,6 @@
 
         <p>This section of the website contains proceedings &amp; minutes from IBM 1620 User Group / COMMON meetings.</p>
 
-        <p>Here are the known User Group Meetings for the IBM 1620.
     </div>
 
     <div id=BodyTable>
